@@ -12,4 +12,4 @@ install:
   - yarn install
 
 script:
-  - yarn run css:lint
+  - yarn run lint:css
