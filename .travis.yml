@@ -13,3 +13,4 @@ install:
 
 script:
   - yarn run lint:css
+  - yarn run lint:js-passing

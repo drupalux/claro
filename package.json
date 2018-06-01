@@ -6,7 +6,23 @@
     "stylelint-no-browser-hacks": "^1.2.1"
   },
   "scripts": {
+    "build:js": "cross-env BABEL_ENV=legacy node ./scripts/js/babel-es6-build.js",
+    "build:js-dev": "cross-env NODE_ENV=development BABEL_ENV=legacy node ../scripts/js/babel-es6-build.js",
+    "watch:js": "cross-env BABEL_ENV=legacy node ./scripts/js/babel-es6-watch.js",
+    "watch:js-dev": "cross-env NODE_ENV=development BABEL_ENV=legacy node ./scripts/js/babel-es6-watch.js",
+    "lint:js": "node ./node_modules/eslint/bin/eslint.js .",
+    "lint:js-passing": "node ./node_modules/eslint/bin/eslint.js --quiet --config=.eslintrc.passing.json .",
+    "lint:js-stats": "node ./node_modules/eslint/bin/eslint.js --format=./scripts/js/eslint-stats-by-type.js .",
     "lint:css": "stylelint \"**/*.css\"",
     "lint:css-checkstyle": "stylelint \"**/*.css\" --custom-formatter ./node_modules/stylelint-checkstyle-formatter/index.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "cross-env": "^5.1.6",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.8.2"
   }
 }
