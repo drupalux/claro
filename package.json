@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "stylelint": "^9.2.1",
+    "stylelint-checkstyle-formatter": "^0.1.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-no-browser-hacks": "^1.2.1"
+  },
+  "scripts": {
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:css-checkstyle": "stylelint \"**/*.css\" --custom-formatter ./node_modules/stylelint-checkstyle-formatter/index.js"
+  }
+}
