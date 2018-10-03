@@ -14,7 +14,9 @@
    */
   Drupal.behaviors.responsiveDetails = {
     attach(context) {
-      const $details = $(context).find('details').once('responsive-details');
+      const $details = $(context)
+        .find('details')
+        .once('responsive-details');
 
       if (!$details.length) {
         return;
@@ -33,9 +35,7 @@
           const $notPressed = $details
             .find('> summary[aria-pressed!=true]')
             .attr('aria-expanded', false);
-          $notPressed
-            .parent('details')
-            .attr('open', false);
+          $notPressed.parent('details').attr('open', false);
           // After resize, allow user to close previously opened details.
           $summaries.off('.details-open');
         }
