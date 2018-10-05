@@ -13,16 +13,35 @@
     "lint:js": "node ./node_modules/eslint/bin/eslint.js .",
     "lint:js-passing": "node ./node_modules/eslint/bin/eslint.js --quiet --config=.eslintrc.passing.json .",
     "lint:js-stats": "node ./node_modules/eslint/bin/eslint.js --format=./scripts/js/eslint-stats-by-type.js .",
-    "lint:css": "stylelint \"**/*.css\"",
-    "lint:css-checkstyle": "stylelint \"**/*.css\" --custom-formatter ./node_modules/stylelint-checkstyle-formatter/index.js"
+    "lint:css": "stylelint \"dist/**/*.css\"",
+    "lint:css-checkstyle": "stylelint \"dist/**/*.css\" --custom-formatter ./node_modules/stylelint-checkstyle-formatter/index.js",
+    "build:css": "gulp dist",
+    "build:css-dev": "gulp sass",
+    "watch:css": "gulp watch-dist",
+    "watch:css-dev": "gulp watch"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "cross-env": "^5.1.6",
+    "del": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.8.2"
+    "eslint-plugin-react": "^7.8.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-changed": "^3.2.0",
+    "gulp-eol": "^0.2.0",
+    "gulp-filter": "^5.1.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-svgmin": "^2.1.0"
   }
 }
