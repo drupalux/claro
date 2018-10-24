@@ -13,12 +13,12 @@
     "lint:js": "node ./node_modules/eslint/bin/eslint.js .",
     "lint:js-passing": "node ./node_modules/eslint/bin/eslint.js --quiet --config=.eslintrc.passing.json .",
     "lint:js-stats": "node ./node_modules/eslint/bin/eslint.js --format=./scripts/js/eslint-stats-by-type.js .",
-    "lint:css": "stylelint \"dist-css/**/*.css\"",
-    "lint:css-checkstyle": "stylelint \"dist-css/**/*.css\" --custom-formatter ./node_modules/stylelint-checkstyle-formatter/index.js",
-    "build:css": "cross-env NODE_ENV=production ./node_modules/.bin/postcss \"source/css\" --dir \"dist-css\" --base \"source/css\"",
-    "build:css-dev": "cross-env NODE_ENV=development ./node_modules/.bin/postcss \"source/css\" --dir \"dist-css\" --base \"source/css\"",
-    "watch:css": "cross-env NODE_ENV=production ./node_modules/.bin/postcss \"source/css\" --dir \"dist-css\" --base \"source/css\" --watch",
-    "watch:css-dev": "cross-env NODE_ENV=development ./node_modules/.bin/postcss \"source/css\" --dir \"dist-css\" --base \"source/css\" --watch"
+    "lint:css": "stylelint \"css/dist/**/*.css\"",
+    "lint:css-checkstyle": "stylelint \"css/dist/**/*.css\" --custom-formatter ./node_modules/stylelint-checkstyle-formatter/index.js",
+    "build:css": "cross-env NODE_ENV=production ./node_modules/.bin/postcss \"css/src\" --dir \"css/dist\" --base \"css/src\"",
+    "build:css-dev": "cross-env NODE_ENV=development ./node_modules/.bin/postcss \"css/src\" --dir \"css/dist\" --base \"css/src\"",
+    "watch:css": "cross-env NODE_ENV=production ./node_modules/.bin/postcss \"css/src\" --dir \"css/dist\" --base \"css/src\" --watch",
+    "watch:css-dev": "cross-env NODE_ENV=development ./node_modules/.bin/postcss \"css/src\" --dir \"css/dist\" --base \"css/src\" --watch"
   },
   "browserslist": [
     "last 2 versions",

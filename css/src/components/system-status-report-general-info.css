@@ -43,20 +43,20 @@
   display: block;
 }
 .system-status-general-info__item-icon--d8:before {
-  background-image: url(../../images/icons/cccccc/d8-logo.svg);
+  background-image: url(../../../images/icons/cccccc/d8-logo.svg);
 }
 .system-status-general-info__item-icon--clock:before {
-  background-image: url(../../images/icons/cccccc/clock.svg);
+  background-image: url(../../../images/icons/cccccc/clock.svg);
 }
 .system-status-general-info__item-icon--server:before {
-  background-image: url(../../images/icons/cccccc/server.svg);
+  background-image: url(../../../images/icons/cccccc/server.svg);
 }
 .system-status-general-info__item-icon--php:before {
-  background-image: url(../../images/icons/cccccc/php-logo.svg);
+  background-image: url(../../../images/icons/cccccc/php-logo.svg);
   background-size: 45px;
 }
 .system-status-general-info__item-icon--database:before {
-  background-image: url(../../images/icons/cccccc/database.svg);
+  background-image: url(../../../images/icons/cccccc/database.svg);
   background-size: 30px;
 }
 

@@ -8,7 +8,7 @@ module.exports = ctx => ({
       // Breaks style lint and unnecessary if preserve set to false.
       // exportTo: 'dist-css/variables.css',
       importFrom: [
-        'source/variables.js'
+        './variables.js'
       ]
     }),
     require('autoprefixer')({
