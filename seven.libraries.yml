@@ -2,43 +2,43 @@ global-styling:
   version: VERSION
   css:
     base:
-      css/base/elements.css: {}
-      css/base/typography.css: {}
-      css/base/print.css: {}
+      css/dist/base/elements.css: {}
+      css/dist/base/typography.css: {}
+      css/dist/base/print.css: {}
     component:
-      css/components/admin-list.css: {}
-      css/components/content-header.css: {}
-      css/components/container-inline.css: {}
-      css/components/container-inline.module.css: {}
-      css/components/breadcrumb.css: {}
-      css/components/buttons.css: {}
-      css/components/details.css: {}
-      css/components/messages.css: {}
-      css/components/dropbutton.component.css: {}
-      css/components/entity-meta.css: {}
-      css/components/field-ui.css: {}
-      css/components/form.css: {}
-      css/components/help.css: {}
-      css/components/menus-and-lists.css: {}
-      css/components/modules-page.css: {}
-      css/components/node.css: {}
-      css/components/page-title.css: {}
-      css/components/pager.css: {}
-      css/components/panel.css: {}
-      css/components/skip-link.css: {}
-      css/components/tables.css: {}
-      css/components/search-admin-settings.css: {}
-      css/components/tablesort-indicator.css: {}
-      css/components/system-status-report-general-info.css: {}
-      css/components/system-status-report.css: {}
-      css/components/system-status-report-counters.css: {}
-      css/components/system-status-counter.css: {}
-      css/components/tabs.css: {}
-      css/components/views-ui.css: {}
+      css/dist/components/admin-list.css: {}
+      css/dist/components/content-header.css: {}
+      css/dist/components/container-inline.css: {}
+      css/dist/components/container-inline.module.css: {}
+      css/dist/components/breadcrumb.css: {}
+      css/dist/components/buttons.css: {}
+      css/dist/components/details.css: {}
+      css/dist/components/messages.css: {}
+      css/dist/components/dropbutton.component.css: {}
+      css/dist/components/entity-meta.css: {}
+      css/dist/components/field-ui.css: {}
+      css/dist/components/form.css: {}
+      css/dist/components/help.css: {}
+      css/dist/components/menus-and-lists.css: {}
+      css/dist/components/modules-page.css: {}
+      css/dist/components/node.css: {}
+      css/dist/components/page-title.css: {}
+      css/dist/components/pager.css: {}
+      css/dist/components/panel.css: {}
+      css/dist/components/skip-link.css: {}
+      css/dist/components/tables.css: {}
+      css/dist/components/search-admin-settings.css: {}
+      css/dist/components/tablesort-indicator.css: {}
+      css/dist/components/system-status-report-general-info.css: {}
+      css/dist/components/system-status-report.css: {}
+      css/dist/components/system-status-report-counters.css: {}
+      css/dist/components/system-status-counter.css: {}
+      css/dist/components/tabs.css: {}
+      css/dist/components/views-ui.css: {}
     theme:
-      css/theme/colors.css: {}
+      css/dist/theme/colors.css: {}
     layout:
-      css/layout/layout.css: {}
+      css/dist/layout/layout.css: {}
   dependencies:
     - system/admin
 
@@ -46,7 +46,7 @@ node-form:
   version: VERSION
   css:
     layout:
-      css/layout/node-add.css: {}
+      css/dist/layout/node-add.css: {}
   dependencies:
     - node/form
 
@@ -56,7 +56,7 @@ maintenance-page:
     js/mobile.install.js: {}
   css:
     theme:
-      css/theme/maintenance-page.css: {}
+      css/dist/theme/maintenance-page.css: {}
   dependencies:
     - system/maintenance
     - seven/global-styling
@@ -67,7 +67,7 @@ install-page:
     js/mobile.install.js: {}
   css:
     theme:
-      css/theme/install-page.css: {}
+      css/dist/theme/install-page.css: {}
   dependencies:
     - seven/maintenance-page
 
@@ -98,36 +98,36 @@ vertical-tabs:
   version: VERSION
   css:
     component:
-      css/components/vertical-tabs.css: {}
+      css/dist/components/vertical-tabs.css: {}
 
 seven.jquery.ui:
   version: VERSION
   css:
     component:
-      css/components/jquery.ui/theme.css: { weight: -1 }
+      css/dist/components/jquery.ui/theme.css: { weight: -1 }
 
 seven.drupal.dialog:
   version: VERSION
   css:
     theme:
-      css/components/dialog.css: {}
+      css/dist/components/dialog.css: {}
 
 ckeditor-dialog:
   version: VERSION
   css:
     theme:
-      css/theme/ckeditor-dialog.css: {}
+      css/dist/theme/ckeditor-dialog.css: {}
 
 tour-styling:
   version: VERSION
   css:
     theme:
-      css/components/tour.theme.css: {}
+      css/dist/components/tour.theme.css: {}
 
 media-form:
   version: VERSION
   css:
     layout:
-      css/components/media.css: {}
+      css/dist/components/media.css: {}
   dependencies:
     - media/form

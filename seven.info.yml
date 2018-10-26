@@ -25,9 +25,9 @@ libraries-override:
   system/base:
     css:
       component:
-        /core/themes/stable/css/system/components/system-status-counter.css: css/components/system-status-counter.css
-        /core/themes/stable/css/system/components/system-status-report-counters.css: css/components/system-status-report-counters.css
-        /core/themes/stable/css/system/components/system-status-report-general-info.css: css/components/system-status-report-general-info.css
+        /core/themes/stable/css/system/components/system-status-counter.css: css/dist/components/system-status-counter.css
+        /core/themes/stable/css/system/components/system-status-report-counters.css: css/dist/components/system-status-report-counters.css
+        /core/themes/stable/css/system/components/system-status-report-general-info.css: css/dist/components/system-status-report-general-info.css
   core/drupal.vertical-tabs:
     css:
       component:
@@ -57,7 +57,7 @@ libraries-extend:
   tour/tour-styling:
     - seven/tour-styling
 quickedit_stylesheets:
-  - css/components/quickedit.css
+  - css/dist/components/quickedit.css
 regions:
   header: 'Header'
   pre_content: 'Pre-content'

@@ -29,13 +29,27 @@ For building a single file use
 yarn run build:js -- --file misc/drupal.es6.js
 ```
 
+## Working on CSS
+The project uses [PostCSS](https://postcss.org/) for managing variables and
+provide the needed browser support. CSS scaffolding tasks are following the
+logic of the js tasks:
+
+  * `yarn build:css`
+    Process sources without writing source maps.
+  * `yarn build:css-dev`
+    Process sources with (external) source maps.
+  * `yarn watch:css`
+    Watches source assets and applies distributive task if any of them changes.
+  * `yarn watch:css-dev`
+    Watches source assets and applies development task if any of them changes.
+
 ## Linting js and css
-For linting css use
+For linting compiled CSS use
 ```
 yarn run lint:css
 ```
 
-For js there are two seperate configs you can use
+For js there are two separate configs you can use
 ```
 yarn run lint:js
 

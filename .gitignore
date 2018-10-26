@@ -1,4 +1,6 @@
 .DS_STORE
 node_modules
+*.css.map
 
 .idea/
+css/dist
