@@ -5,6 +5,6 @@ module.exports = {
     '--color-bg': '#fff',
     '--color-link': '#0074bd',
     // Typography.
-    '--font-family': '\"Lucida Grande\", \"Lucida Sans Unicode\", \"DejaVu Sans\", \"Lucida Sans\", sans-serif'
+    '--font-family': 'BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;'
   }
 }
