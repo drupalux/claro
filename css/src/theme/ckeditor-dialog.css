@@ -27,7 +27,7 @@
   background: none;
 }
 .cke_reset_all .cke_dialog_body * {
-  font: 13px/1.538em "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Lucida Sans", sans-serif;
+  font: 13px/1.538em var(--font-family);
 }
 
 /* Dialog's header. */
