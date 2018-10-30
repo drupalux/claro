@@ -1,0 +1,6 @@
+/**
+ * Divider.
+ */
+.system-themes-list-uninstalled {
+  border-color: var(--color-divider);
+}

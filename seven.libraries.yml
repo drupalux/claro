@@ -13,6 +13,7 @@ global-styling:
       css/dist/components/breadcrumb.css: {}
       css/dist/components/buttons.css: {}
       css/dist/components/details.css: {}
+      css/dist/components/divider.css: {}
       css/dist/components/messages.css: {}
       css/dist/components/dropbutton.component.css: {}
       css/dist/components/entity-meta.css: {}
