@@ -46,6 +46,7 @@ libraries-override:
     css:
       component:
         css/components/details.css: false
+        css/components/form.css: false
 
 libraries-extend:
   core/ckeditor:

@@ -1,0 +1,104 @@
+/**
+ * @file
+ * Text and textarea input elements.
+ */
+
+input.form-text,
+input.form-tel,
+input.form-email,
+input.form-url,
+input.form-search,
+input.form-number,
+input.form-color,
+input.form-file,
+input.form-date,
+input.form-time,
+textarea.form-textarea {
+  box-sizing: border-box;
+  padding: calc(0.75em - var(--size-input-border)) calc(1em - var(--size-input-border));
+  max-width: 100%;
+  border: var(--size-input-border) solid var(--color-input-border);
+  border-radius: var(--size-input-border-radius);
+  background: var(--color-input-bg);
+  font-size: 1em;
+  line-height: 1.5em;
+  color: var(--color-input-fg);
+  transition: border linear var(--speed-transition), box-shadow linear var(--speed-transition);
+}
+
+.form-text:hover,
+.form-tel:hover,
+.form-email:hover,
+.form-url:hover,
+.form-search:hover,
+.form-number:hover,
+.form-color:hover,
+.form-file:hover,
+.form-textarea:hover,
+.form-date:hover,
+.form-time:hover {
+  border-color: var(--color-input-border-hover);
+  box-shadow: inset 0 0 0 var(--size-input-border) var(--color-input-border-hover);
+}
+
+.form-text:focus,
+.form-tel:focus,
+.form-email:focus,
+.form-url:focus,
+.form-search:focus,
+.form-number:focus,
+.form-color:focus,
+.form-file:focus,
+.form-textarea:focus,
+.form-date:focus,
+.form-time:focus {
+  outline: none;
+  border-color: var(--color-input-border-focus);
+  box-shadow: inset 0 0 0 var(--size-input-border) var(--color-input-border-focus);
+}
+
+.form-text[disabled],
+.form-tel[disabled],
+.form-email[disabled],
+.form-url[disabled],
+.form-search[disabled],
+.form-number[disabled],
+.form-color[disabled],
+.form-file[disabled],
+.form-textarea[disabled],
+.form-date[disabled],
+.form-time[disabled] {
+  color: var(--color-input-fg-disabled);
+  background-color: var(--color-input-bg-disabled);
+  border-color: var(--color-input-border-disabled);
+  box-shadow: none;
+}
+
+input.error,
+textarea.error {
+  border-width: var(--size-input-border);
+  border-color: var(--color-input-border-error);
+  box-shadow: inset 0 0 0 var(--size-input-border) var(--color-input-border-error);
+}
+
+textarea.error + .cke {
+  border-width: var(--size-input-border);
+  border-color: var(--color-input-border-error);
+}
+
+/**
+ * Improve form element usability on narrow devices.
+ */
+@media screen and (max-width: 600px) {
+  /* Number, date and time are skipped here */
+  .form-text,
+  .form-tel,
+  .form-email,
+  .form-url,
+  .form-search,
+  .form-color,
+  .form-file,
+  .form-textarea {
+    width: 100%;
+  }
+}

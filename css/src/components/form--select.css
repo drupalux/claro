@@ -1,0 +1,84 @@
+/**
+ * @file
+ * Select input elements.
+ */
+
+/**
+ * Limits extra long instances of select elements to the max width allowed
+ * to avoid breaking layouts.
+ */
+select {
+  max-width: 100%;
+}
+
+.form-disabled select.form-select {
+  border-color: #d4d4d4;
+  background-color: hsla(0, 0%, 0%, 0.08);
+  box-shadow: none;
+}
+
+.form-item select.error {
+  border-width: 1px;
+  border-color: #e62600;
+  background-color: hsla(15, 75%, 97%, 1);
+  box-shadow: inset 0 5px 5px -5px #b8b8b8;
+  color: #a51b00;
+}
+
+.form-item select.error:focus {
+  border-color: #e62600;
+  outline: 0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 8px 1px #e62600;
+  background-color: #fcf4f2;
+}
+
+/* Exceptions */
+#diff-inline-form select,
+div.filter-options select {
+  padding: 0;
+}
+
+/**
+ * Select elements - Webkit only
+ */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select {
+    cursor: pointer;
+    -webkit-appearance: none;
+    padding: 1px 1.571em 1px 0.5em; /* LTR */
+    border: 1px solid #a6a6a6;
+    border-radius: 0.143em;
+    background:
+      url(../../../../misc/icons/333333/caret-down.svg) no-repeat 99% 63%,
+      -webkit-linear-gradient(top, #f6f6f3, #e7e7df); /* LTR */
+
+    text-shadow: 0 1px hsla(0, 0%, 100%, 0.6);
+    font-size: 0.875rem;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+    -webkit-font-smoothing: antialiased;
+  }
+  [dir="rtl"] select {
+    padding: 1px 0.714em 1px 1.571em;
+    background-position: 1% 63%, 0 0;
+  }
+  select:focus,
+  select:hover {
+    background-image:
+      url(../../../../misc/icons/333333/caret-down.svg),
+      -webkit-linear-gradient(top, #fcfcfa, #e9e9dd);
+    color: #1a1a1a;
+  }
+  select:hover {
+    box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.125);
+  }
+}
+
+/**
+ * Improve form element usability on narrow devices.
+ */
+@media screen and (max-width: 600px) {
+  select {
+    width: 100%;
+  }
+}
