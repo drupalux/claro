@@ -24,6 +24,7 @@
     <div class="system-status-report__requirements-group">
       <h3 id="{{ group.type }}">{{ group.title }}</h3>
       {% for requirement in group.items %}
+        <div class="divider"></div>
         <details class="system-status-report__entry system-status-report__entry--{{ group.type }} color-{{ group.type }}" open>
           {%
             set summary_classes = [
@@ -44,6 +45,10 @@
             {% endif %}
           </div>
         </details>
+
+        {% if loop.last %}
+          <div class="divider"></div>
+        {% endif %}
       {% endfor %}
     </div>
   {% endfor %}

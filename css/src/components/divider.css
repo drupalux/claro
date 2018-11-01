@@ -1,6 +1,7 @@
 /**
  * Divider.
  */
-.system-themes-list-uninstalled {
-  border-color: var(--color-divider);
+.divider {
+  background-color: var(--color-divider);
+  height: 1px;
 }

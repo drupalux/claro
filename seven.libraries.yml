@@ -38,6 +38,7 @@ global-styling:
       css/dist/components/views-ui.css: {}
     theme:
       css/dist/theme/colors.css: {}
+      css/dist/theme/system-admin.css: {}
     layout:
       css/dist/layout/layout.css: {}
   dependencies:

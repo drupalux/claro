@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Styles for administration pages.
+ */
+
+/**
+ * Appearance page.
+ */
+.system-themes-list-uninstalled {
+  border-top: 0;
+}
