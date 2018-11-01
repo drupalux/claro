@@ -5,6 +5,8 @@
 
 /**
  * Appearance page.
+ *
+ * @todo Remove this after #58 has been solved.
  */
 .system-themes-list-uninstalled {
   border-top: 0;
