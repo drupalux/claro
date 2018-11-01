@@ -16,6 +16,7 @@
 {% if content %}
   <ul class="admin-list">
     {% for type in types %}
+      <div class="divider"></div>
       <li class="clearfix"><a href="{{ type.url }}"><span class="label">{{ type.label }}</span><div class="description">{{ type.description }}</div></a></li>
     {% endfor %}
   </ul>
