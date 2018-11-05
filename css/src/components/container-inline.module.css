@@ -7,3 +7,8 @@
 .container-inline label {
   display: inline-block;
 }
+
+.container-inline > .form-item {
+  margin-top: 0;
+  margin-bottom: 0;
+}
