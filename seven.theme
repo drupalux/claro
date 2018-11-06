@@ -186,11 +186,29 @@ function seven_preprocess_form_element(&$variables) {
   if (!empty($variables['element']['#errors'])) {
     $variables['label']['#attributes']['class'][] = 'has-error';
   }
+
   if ($variables['disabled']) {
     $variables['label']['#attributes']['class'][] = 'is-disabled';
 
     if (!empty($variables['description']['attributes'])) {
       $variables['description']['attributes']->addClass('is-disabled');
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_datetime_wrapper().
+ */
+function seven_preprocess_datetime_wrapper(&$variables) {
+  if (!empty($variables['element']['#errors'])) {
+    $variables['title_attributes']['class'][] = 'has-error';
+  }
+
+  if (!empty($variables['element']['#disabled'])) {
+    $variables['title_attributes']['class'][] = 'is-disabled';
+
+    if (!empty($variables['description_attributes'])) {
+      $variables['description_attributes']->addClass('is-disabled');
     }
   }
 }

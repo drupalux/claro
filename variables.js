@@ -54,8 +54,8 @@ module.exports = {
     '--color-input-bg-disabled': 'rgba(212, 212, 216, 0.3)', // Light gray with opacity.
     '--color-input-border-disabled': 'rgba(130, 130, 140, 0.5)', // Old silver with opacity.
     '--opacity-input-border-disabled': '0.5',
-    '--size-input-border-radius': 'calc(1em / 8)',
-    '--size-input-border': 'calc(1em / 16)',
-    '--size-required-mark': 'calc(7em / 14)' // 7px inside the form element label.
+    '--size-input-border-radius': '0.125em', // (1/8)em ~ 2px
+    '--size-input-border': '0.0625em', // (1/16)em ~ 1px
+    '--size-required-mark': '0.5em' // 7px inside the form element label.
   }
 }
