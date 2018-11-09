@@ -6,6 +6,6 @@ module.exports = {
     '--color-link': '#0074bd',
     '--color-divider': 'rgba(142, 146, 156, 0.4)',
     // Typography.
-    '--font-family': 'BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;'
+    '--font-family': '\"Lucida Grande\", \"Lucida Sans Unicode\", \"DejaVu Sans\", \"Lucida Sans\", sans-serif'
   }
 }
