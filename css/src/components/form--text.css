@@ -14,6 +14,7 @@ input.form-file,
 input.form-date,
 input.form-time,
 textarea.form-textarea {
+  appearance: none; /* Being able to control inner box shadow on iOS. */
   box-sizing: border-box;
   padding: calc(0.75em - var(--size-input-border)) calc(1em - var(--size-input-border));
   max-width: 100%;
@@ -21,9 +22,21 @@ textarea.form-textarea {
   border-radius: var(--size-input-border-radius);
   background: var(--color-input-bg);
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.5;
   color: var(--color-input-fg);
   transition: border linear var(--speed-transition), box-shadow linear var(--speed-transition);
+  min-height: 3em; /* iOS. */
+}
+
+input.form-date,
+input.form-time {
+  vertical-align: -webkit-baseline-middle; /* Prevent iOS input jump while filling. */
+}
+input.form-date {
+  min-width: 9.5em; /* Prevent input width change while filling. */
+}
+input.form-time {
+  min-width: 7.5em; /* Prevent input width change while filling. */
 }
 
 .form-text:hover,

@@ -7,8 +7,7 @@ form {
   font: 16px/1.5 var(--font-family); /* @TODO form only temporary, remove before merge */
 }
 
-input::placeholder,
-textarea::placeholder {
+::placeholder {
   color: var(--color-placeholder-fg);
 }
 
@@ -199,7 +198,9 @@ ul.tips li {
     width: 100%;
   }
   .form-actions input:first-child,
-  .form-wrapper input:first-child {
+  .form-wrapper input:first-child,
+  .form-actions label + input,
+  .form-wrapper label + input {
     margin-top: 0;
   }
   details summary {

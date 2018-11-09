@@ -8,7 +8,12 @@
   display: inline-block;
 }
 
-.container-inline > .form-item {
-  margin-top: 0;
-  margin-bottom: 0;
+.form-item > .container-inline {
+  margin-top: -0.125em; /* 2px */
+  margin-bottom: -0.125em;
+}
+
+.form-item > .container-inline > .form-item {
+  margin-top: 0.125em;
+  margin-bottom: 0.125em;
 }
