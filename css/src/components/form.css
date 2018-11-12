@@ -3,10 +3,6 @@
  * Main form styles.
  */
 
-form {
-  font: 16px/1.5 var(--font-family); /* @TODO form only temporary, remove before merge */
-}
-
 ::placeholder {
   color: var(--color-placeholder-fg);
 }
