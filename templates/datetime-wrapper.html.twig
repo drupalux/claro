@@ -10,10 +10,9 @@
 #}
 {%
   set title_classes = [
-    'label',
+    'form-item__label',
     required ? 'js-form-required',
     required ? 'form-required',
-    'form-item--label',
     errors ? 'has-error',
   ]
 %}
@@ -23,12 +22,12 @@
 {% endif %}
 {{ content }}
 {% if errors %}
-  <div class="form-item--error-message">
+  <div class="form-item__error-message">
     {{ errors }}
   </div>
 {% endif %}
 {% if description %}
-  <div{{ description_attributes.addClass('description') }}>
+  <div{{ description_attributes.addClass('form-item__description') }}>
     {{ description }}
   </div>
 {% endif %}

@@ -19,30 +19,37 @@
 <fieldset{{ attributes.addClass(classes) }}>
   {%
     set legend_span_classes = [
-      'fieldset-legend',
+      attributes.hasClass('fieldgroup') and attributes.hasClass('form-composite') ? 'form-item__label' : 'fieldset__label',
       required ? 'js-form-required',
       required ? 'form-required',
+      attributes.offsetGet('disabled') ? 'is-disabled',
+    ]
+  %}
+  {%
+    set description_classes = [
+     'form-item__description',
+      attributes.offsetGet('disabled') ? 'is-disabled',
     ]
   %}
   {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
-  <legend{{ legend.attributes }}>
+  <legend{{ legend.attributes.addClass('fieldset__legend') }}>
     <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
   </legend>
-  <div class="fieldset-wrapper">
+  <div class="fieldset__wrapper">
     {% if errors %}
-      <div class="form-item--error-message">
+      <div class="form-item__error-message">
         {{ errors }}
       </div>
     {% endif %}
     {% if prefix %}
-      <span class="field-prefix">{{ prefix }}</span>
+      <span class="form-item__prefix">{{ prefix }}</span>
     {% endif %}
     {{ children }}
     {% if suffix %}
-      <span class="field-suffix">{{ suffix }}</span>
+      <span class="form-item__suffix">{{ suffix }}</span>
     {% endif %}
     {% if description.content %}
-      <div{{ description.attributes.addClass('description') }}>{{ description.content }}</div>
+      <div{{ description.attributes.addClass(description_classes) }}>{{ description.content }}</div>
     {% endif %}
   </div>
 </fieldset>

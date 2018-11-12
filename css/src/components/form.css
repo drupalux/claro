@@ -71,8 +71,7 @@ td > .form-item:only-child {
 /**
  * Form element label.
  */
-.fieldgroup legend,
-.form-item--label {
+.form-item__label {
   display: table;
   font-size: calc(14em / 16); /* 14px */
   line-height: calc(18 / 14); /* 18px */
@@ -80,22 +79,22 @@ td > .form-item:only-child {
   margin-bottom: calc(4em / 14); /* 4px */
   font-weight: bold;
 }
-.form-item--label[for] {
+.form-item__label[for] {
   cursor: pointer;
 }
-.form-item--label.option {
+.form-item__label.option {
   display: inline;
   font-weight: normal;
 }
 /* Label states. */
-.form-item--label.has-error {
+.form-item__label.has-error {
   color: var(--color-input-error);
 }
-.form-item--label.is-disabled {
+.form-item__label.is-disabled {
   color: var(--color-input-fg-disabled);
   cursor: default; /* @todo ...or auto? */
 }
-.form-item--label.form-required::after {
+.form-item__label.form-required::after {
   content: "";
   vertical-align: super;
   display: inline-block;
@@ -112,7 +111,7 @@ td > .form-item:only-child {
 /**
  * Description.
  */
-.description {
+.form-item__description {
   font-size: calc(12em / 16); /* 12px */
   line-height: calc(17 / 12); /* 17px */
   color: var(--color-description-fg);
@@ -120,14 +119,14 @@ td > .form-item:only-child {
   margin-bottom: calc(6em / 12); /* 6px */
 }
 /* Description states. */
-.description.is-disabled {
+.form-item__description.is-disabled {
   color: var(--color-input-fg-disabled);
 }
 
 /**
  * Error message (Inline form errors).
  */
-.form-item--error-message {
+.form-item__error-message {
   font-size: calc(12em / 16); /* 12px */
   font-weight: normal;
   line-height: calc(17 / 12); /* 17px */
