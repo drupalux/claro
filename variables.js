@@ -47,6 +47,7 @@ module.exports = {
     '--color-input-border': 'var(--color-grayblue)',
     '--color-input-border-hover': 'var(--color-text)',
     '--color-input-border-focus': 'var(--color-absolutezero)',
+    '--color-input-focus-shadow': 'rgba(0, 74, 220, 0.3)', // Absolute zero with opacity.
     '--color-input-error': 'var(--color-maximumred)',
     '--color-input-border-error': 'var(--color-maximumred)',
     '--color-input-label-disabled': 'rgba(84, 85, 96, 0.6)', // Davy's grey with opacity.

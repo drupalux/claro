@@ -19,6 +19,7 @@ global-styling:
       css/dist/components/entity-meta.css: {}
       css/dist/components/field-ui.css: {}
       css/dist/components/form.css: {}
+      css/dist/components/form--checkbox-radio.css: {}
       css/dist/components/form--select.css: {}
       css/dist/components/form--text.css: {}
       css/dist/components/help.css: {}

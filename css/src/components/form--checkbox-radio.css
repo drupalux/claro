@@ -1,0 +1,163 @@
+/**
+ * @file
+ * Checkbox and radio input elements.
+ */
+
+/**
+ * When form items are nested in radios or checkboxes group, reduce the default
+ * space between them.
+ */
+.form-radios .form-item,
+.form-checkboxes .form-item {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+.form-radios .form-item:first-child,
+.form-checkboxes .form-item:first-child {
+  margin-top: 0;
+}
+.form-radios .form-item:last-child,
+.form-checkboxes .form-item:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Form item modifiers.
+ */
+.form-type--checkbox,
+.form-type--radio {
+  margin-left: 1.5em; /* 24px */
+}
+[dir=rtl] .form-type--checkbox,
+[dir=rtl] .form-type--radio {
+  margin-right: 1.5em;
+  margin-left: 0;
+}
+
+/**
+ * Input elements.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  margin-left: -1.5em; /* -24px */
+  position: absolute;
+  /* clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal; */
+}
+[dir=rtl] input[type="checkbox"],
+[dir=rtl] input[type="radio"] {
+  margin-right: -1.5em; /* -24px */
+  margin-left: 0;
+}
+
+.option {
+  position: relative;
+}
+
+/**
+ * Semi-checkbox and semi-radio (pseudo elements of the label).
+ */
+input[type="checkbox"] + .option::before,
+input[type="radio"] + .option::before {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: calc(-24em / 14);
+  width: calc(18em / 14);
+  height: calc(18em / 14);
+  transform: translateY(-50%);
+  transition: all linear var(--speed-transition) 0s;
+  border: calc(1em / 14) solid var(--color-input-border); /* 1px */
+  border-radius: calc(2em / 14); /* 2px */
+  background: var(--color-input-bg);
+  color: black;
+  content: "";
+  box-sizing: border-box;
+  text-align: center;
+  line-height: calc(16em / 14);
+}
+input[type="radio"] + .option::before {
+  border-radius: calc(9em / 14); /* 2px */
+}
+[dir="rtl"] input[type="checkbox"] + .option::before,
+[dir="rtl"] input[type="radio"] + .option::before {
+  right: calc(-24em / 14);
+  left: auto;
+}
+/* Checkbox hover state. */
+input[type="checkbox"] + .option:hover::before {
+  border-color: var(--color-input-border-hover);
+  box-shadow: inset 0 0 0 calc(1em / 14) var(--color-input-border-hover);
+}
+/* Checkbox focus state. */
+input[type="checkbox"]:focus + .option::before {
+  box-shadow: 0 0 0 calc(4em / 14) var(--color-input-focus-shadow);
+}
+/* Checkbox focus and hover. */
+input[type="checkbox"]:focus + .option:hover::before,
+input[type="checkbox"]:active + .option::before { /* Keyboard. */
+  box-shadow: 0 0 0 calc(4em / 14) var(--color-input-focus-shadow), inset 0 0 0 calc(1em / 14) var(--color-input-border-hover);
+  border-color: var(--color-input-border-hover);
+}
+/* Focus, hover and active on label (pointer or tap). */
+input[type="checkbox"]:active + .option:hover::before {
+  box-shadow: 0 0 0 calc(4em / 14) var(--color-input-focus-shadow), inset 0 0 0 calc(1em / 14) var(--color-input-border-hover);
+  border-color: var(--color-input-border-hover);
+}
+
+/* Checked. */
+input[type="checkbox"]:checked + .option::before {
+  content: '\2713';
+  border-color: var(--color-input-border-focus);
+  background: var(--color-input-border-focus);
+  color: var(--color-input-bg);
+}
+/* Checkbox focus and hover. */
+input[type="checkbox"]:checked:focus + .option:hover::before,
+input[type="radio"]:checked:active + .option::before { /* Keyboard. */
+  box-shadow: 0 0 0 calc(4em / 14) var(--color-input-focus-shadow);
+  content: '\2713';
+  border-color: var(--color-input-fg);
+  background: var(--color-input-fg);
+  color: var(--color-input-bg);
+}
+/* Checked focus, hover and active on label (pointer or tap). */
+input[type="checkbox"]:focus:active + .option:hover::before {
+  box-shadow: 0 0 0 calc(4em / 14) var(--color-input-focus-shadow);
+  border-color: var(--color-input-fg);
+  background: var(--color-input-fg);
+}
+
+
+
+
+
+/* Focus, hover and active on label (pointer or tap). *//*
+input[type="checkbox"]:checked :active + .option:hover::before,
+input[type="radio"]:checked :active + .option:hover::before {
+  box-shadow: 0 0 0 calc(4em / 14) var(--color-input-focus-shadow);
+  border-color: var(--color-input-border-focus);
+}*/
+
+/* input[type="checkbox"]:checked + .option::before,
+input[type="radio"]:checked + .option::before {
+  border-color: var(--color-input-border-focus);
+  background: var(--color-input-border-focus);
+  color: var(--color-input-bg);
+} */
+
+
+input[type="radio"]:checked + .option::before {
+  content: '\25cf';
+  /* content: '\2022'; */
+}
+
+@media screen and (max-width: 600px) {
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: auto;
+  }
+}
