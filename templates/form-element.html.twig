@@ -28,7 +28,7 @@
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
-  {% if label_display in ['before', 'invisible'] %}
+  {% if label_display == 'before' or (label_display == 'invisible' and type not in ['radio', 'checkbox']) %}
     {{ label }}
   {% endif %}
   {% if prefix is not empty %}
@@ -43,7 +43,7 @@
   {% if suffix is not empty %}
     <span class="form-item__suffix{{disabled == 'disabled' ? ' is-disabled'}}">{{ suffix }}</span>
   {% endif %}
-  {% if label_display == 'after' %}
+  {% if label_display == 'after' or (label_display == 'invisible' and type in ['radio', 'checkbox']) %}
     {{ label }}
   {% endif %}
   {% if errors %}

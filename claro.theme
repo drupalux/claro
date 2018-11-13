@@ -196,6 +196,14 @@ function claro_preprocess_form_element(&$variables) {
       $variables['description']['attributes']->addClass('is-disabled');
     }
   }
+
+  if (
+    in_array($variables['type'], ['radio', 'checkbox']) &&
+    $variables['label']['#title_display'] === 'invisible'
+  ) {
+    $variables['label']['#title_display'] = 'after';
+    $variables['label']['#attributes']['class'][] = 'visually-hidden';
+  }
 }
 
 /**
