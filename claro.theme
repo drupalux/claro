@@ -196,13 +196,17 @@ function claro_preprocess_form_element(&$variables) {
       $variables['description']['attributes']->addClass('is-disabled');
     }
   }
+}
 
+/**
+ * Implements hook_preprocess_HOOK() for input.
+ */
+function seven_preprocess_input(&$variables) {
   if (
-    in_array($variables['type'], ['radio', 'checkbox']) &&
-    $variables['label']['#title_display'] === 'invisible'
+    $variables['element']['#title_display'] === 'attribute' &&
+    !empty((string) $variables['element']['#title'])
   ) {
-    $variables['label']['#title_display'] = 'after';
-    $variables['label']['#attributes']['class'][] = 'visually-hidden';
+    $variables['attributes']['title'] = (string) $variables['element']['#title'];
   }
 }
 

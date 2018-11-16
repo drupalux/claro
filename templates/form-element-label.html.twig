@@ -1,41 +1,12 @@
 {#
 /**
  * @file
- * Theme override for a form element label.
- *
- * Available variables:
- * - title: The label's text.
- * - title_display: Elements title_display setting.
- * - required: An indicator for whether the associated form element is required.
- * - attributes: A list of HTML attributes for the label.
- *
- * @see template_preprocess_form_element_label()
+ * Template override for a form element label.
  */
 #}
+
+{% extends '@classy/form/form-element-label.html.twig' %}
+
 {%
-  set classes = [
-    'form-item__label',
-    title_display == 'after' ? 'option',
-    title_display == 'invisible' ? 'visually-hidden',
-    required ? 'js-form-required',
-    required ? 'form-required',
-  ]
+  set attributes = attributes.addClass('form-item__label')
 %}
-{%
-  set title_classes = []
-%}
-{% if title_display == 'after' and attributes.hasClass('visually-hidden') %}
-  {% set title_classes = ['visually-hidden'] %}
-{% endif %}
-{%
-  set classes_remove = title_classes
-%}
-{% if title is not empty or required -%}
-  <label{{ attributes.addClass(classes).removeClass(classes_remove) }}>
-    {%- if title_classes -%}
-      <span{{ create_attribute({class: title_classes}) }}>{{ title }}</span>
-    {%- else -%}
-      {{ title }}
-    {%- endif -%}
-  </label>
-{%- endif %}

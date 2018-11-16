@@ -51,6 +51,9 @@ td > .form-item:only-child {
 .form-item__label.has-error {
   color: var(--color-input-error);
 }
+.form-item__label.option.has-error {
+  color: inherit;
+}
 .form-item__label.is-disabled {
   color: var(--color-input-fg-disabled);
   cursor: default; /* @todo ...or auto? */
