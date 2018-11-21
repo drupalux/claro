@@ -203,6 +203,7 @@ function claro_preprocess_form_element(&$variables) {
  */
 function seven_preprocess_input(&$variables) {
   if (
+    !empty($variables['element']['#title_display']) &&
     $variables['element']['#title_display'] === 'attribute' &&
     !empty((string) $variables['element']['#title'])
   ) {
