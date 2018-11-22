@@ -3,17 +3,17 @@
  * Text and textarea input elements.
  */
 
-input.form-text,
-input.form-tel,
-input.form-email,
-input.form-url,
-input.form-search,
-input.form-number,
-input.form-color,
-input.form-file,
-input.form-date,
-input.form-time,
-textarea.form-textarea {
+.form-text,
+.form-tel,
+.form-email,
+.form-url,
+.form-search,
+.form-number,
+.form-color,
+.form-file,
+.form-date,
+.form-time,
+.form-textarea {
   appearance: none; /* Being able to control inner box shadow on iOS. */
   box-sizing: border-box;
   padding: calc(0.75em - var(--size-input-border)) calc(1em - var(--size-input-border));
@@ -28,14 +28,14 @@ textarea.form-textarea {
   min-height: 3em; /* iOS. */
 }
 
-input.form-date,
-input.form-time {
+.form-date,
+.form-time {
   vertical-align: -webkit-baseline-middle; /* Prevent iOS input jump while filling. */
 }
-input.form-date {
+.form-date {
   min-width: 9.5em; /* Prevent input width change while filling. */
 }
-input.form-time {
+.form-time {
   min-width: 7.5em; /* Prevent input width change while filling. */
 }
 
