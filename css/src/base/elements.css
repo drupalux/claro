@@ -5,7 +5,7 @@
 body {
   color: var(--color-fg);
   background: var(--color-bg);
-  font: normal 81.3%/1.538em var(--font-family);
+  font: normal 16px/1.5 var(--font-family);
 }
 
 a,
