@@ -68,6 +68,8 @@ libraries-extend:
     - claro/tour-styling
   classy/image-widget:
     - claro/image-widget
+  ckeditor/drupal.ckeditor:
+    - claro/ckeditor-editor
 
 quickedit_stylesheets:
   - css/dist/components/quickedit.css

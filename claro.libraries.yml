@@ -122,6 +122,12 @@ ckeditor-dialog:
     theme:
       css/dist/theme/ckeditor-dialog.css: {}
 
+ckeditor-editor:
+  version: VERSION
+  css:
+    theme:
+      css/dist/theme/ckeditor-editor.css: {}
+
 tour-styling:
   version: VERSION
   css:

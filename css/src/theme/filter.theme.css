@@ -12,10 +12,9 @@
 
 .filter-wrapper {
   border: 0;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 0.5em; /* (8 / 16) */
+  margin-bottom: 0.5em; /* (8 / 16) */
   padding: 0;
-  overflow: hidden;
 }
 .filter-wrapper .form-item {
   margin: 0;
@@ -25,56 +24,29 @@
 }
 
 .filter-help {
+  padding-top: 0.25em; /* (3 / 12), because font size is 12px */
+  padding-bottom: 0.25em; /* (3 / 12) */
+  font-size: 0.75em; /* (12 / 16), inherited font size is 16px */
   float: right; /* LTR */
 }
 [dir="rtl"] .filter-help {
   float: left;
 }
-.filter-guidelines .filter-guidelines-item {
-  margin-top: 1em;
-}
-.filter-help p {
-  margin: 0;
-}
-.filter-help a {
-  position: relative;
-  margin: 0 20px 0 0; /* LTR */
-}
-[dir="rtl"] .filter-help a {
-  margin: 0 0 0 20px;
-}
-.filter-help a:after {
-  position: absolute;
-  top: 0;
-  right: -20px; /* LTR */
-  content: '';
-  display: block;
-  width: 16px;
-  height: 16px;
-  background: transparent url("../../../../../../core/themes/stable/images/core/help.png");
-}
-[dir="rtl"] .filter-help a:after {
-  right: auto;
-  left: -20px;
-}
-
-.text-format-wrapper .description {
-  margin-top: 0.5em;
-}
-.tips {
-  font-size: 0.9em;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-top: 0;
-}
 
 /**
- * Improve filter tips position.
+ * Filter guidelines.
  */
-.tips {
-  padding-left: 0; /* LTR */
+.filter-guidelines__item {
+  margin-top: 0.5em; /* (6 / 12) */
+  font-size: 0.75em; /* (12 / 16) */
+  color: var(--color-description-fg);
 }
-[dir="rtl"] .tips {
-  padding-right: 0;
+/* Filter tips. */
+.filter-guidelines__item .tips li {
+  margin-top: 0.3333em; /* (4 / 12) */
+  margin-bottom: 0;
+}
+.filter-guidelines__item p {
+  margin-top: 0.3333em; /* (4 / 12) */
+  margin-bottom: 0;
 }

@@ -184,16 +184,15 @@ td > .form-item:only-child {
  * @legacy
  * @todo Not sure that this is the right component for this.
  */
-ul.tips {
-  margin: 0.2em 0 0 0;
-  color: #595959;
-  /* font-size: 0.95em; */
+.tips {
+  padding-left: 0;
 }
-ul.tips li {
-  margin: 0.25em 0 0.25em 1.5em; /* LTR */
+[dir="rtl"] .tips {
+  padding-right: 0;
 }
-[dir="rtl"] ul.tips li {
-  margin: 0.25em 1.5em 0.25em 0;
+.tips li {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 /**
