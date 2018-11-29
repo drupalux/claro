@@ -29,9 +29,9 @@
 }
 
 .cke .cke_top {
-  border: 0.0625em solid transparent;
+  border: 0.0833em solid transparent; /* Moono lisa skin uses font-size 12px */
   border-bottom: 0;
-  border-radius: 0.0625em 0.0625em 0 0;
+  border-radius: 0.0833em 0.0833em 0 0;
 }
 
 .cke .cke_contents {
@@ -41,9 +41,9 @@
 }
 
 .cke .cke_bottom {
-  border: 0.0625em solid transparent;
+  border: 0.0833em solid transparent; /* Moono lisa skin uses font-size 12px */
   border-top: 0;
-  border-radius: 0 0 0.0625em 0.0625em;
+  border-radius: 0 0 0.0833em 0.0833em;
 }
 
 /* Default */
@@ -106,4 +106,7 @@
 [disabled] + .cke .cke_bottom > * {
   /* Don't show element path dor disabled editor. */
   opacity: 0;
+}
+[disabled] + .cke .cke_path_empty::after {
+  content: none;
 }
