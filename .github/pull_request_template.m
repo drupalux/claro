@@ -1,6 +1,6 @@
 ## Issue
 
-https://github.com/drupalux/seven/issues/<TODO>
+https://github.com/drupalux/claro/issues/<TODO>
 
 ## Screenshot / UI changes
 

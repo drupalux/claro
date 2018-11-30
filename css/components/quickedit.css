@@ -6,7 +6,7 @@
  */
 
 /**
- * The Seven style guide prescribes softer corners.
+ * The Claro style guide prescribes softer corners.
  */
 .quickedit-toolbar-container > .quickedit-toolbar-content,
 .quickedit-toolbar-container > .quickedit-toolbar-lining {
@@ -17,7 +17,7 @@
 }
 
 /**
- * Entity toolbar's "save" button must be styled like a Seven primary button.
+ * Entity toolbar's "save" button must be styled like a Claro primary button.
  */
 .quickedit-button.action-save,
 .quickedit-button.action-saving {

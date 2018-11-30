@@ -61,7 +61,7 @@ maintenance-page:
       css/dist/theme/maintenance-page.css: {}
   dependencies:
     - system/maintenance
-    - seven/global-styling
+    - claro/global-styling
 
 install-page:
   version: VERSION
@@ -71,7 +71,7 @@ install-page:
     theme:
       css/dist/theme/install-page.css: {}
   dependencies:
-    - seven/maintenance-page
+    - claro/maintenance-page
 
 drupal.nav-tabs:
   version: VERSION
@@ -102,13 +102,13 @@ vertical-tabs:
     component:
       css/dist/components/vertical-tabs.css: {}
 
-seven.jquery.ui:
+claro.jquery.ui:
   version: VERSION
   css:
     component:
       css/dist/components/jquery.ui/theme.css: { weight: -1 }
 
-seven.drupal.dialog:
+claro.drupal.dialog:
   version: VERSION
   css:
     theme:

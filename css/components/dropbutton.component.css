@@ -32,7 +32,7 @@
 }
 
 /**
- * Overwrite Sevens button styling.
+ * Overwrite Claros button styling.
  */
 .js .dropbutton-widget .button {
   background: transparent;
@@ -159,7 +159,7 @@
 
 /**
  * Rare instances when a dropbutton is actually just a button.
- * Copied from Seven's buttons.css.
+ * Copied from Claro's buttons.css.
  */
 .dropbutton-single .dropbutton-widget {
   border: 0;
