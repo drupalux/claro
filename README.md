@@ -1,4 +1,4 @@
-# Clone of the 'seven' theme
+# Claro Drupal admin theme
 
 ## Pre-requisites
 Before starting, ensure that you are using at least the latest LTS release of

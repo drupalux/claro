@@ -5,7 +5,7 @@
 /* @group Forms */
 
 /**
- * Seven positions the summary absolutely, but does not have a way to ignore
+ * Claro positions the summary absolutely, but does not have a way to ignore
  * details without a summary so we make one up.
  *
  * @todo Neither a fieldset without legend nor a details without summary is
@@ -21,12 +21,12 @@ details.fieldset-no-legend {
  * a layout problem occurs for the Display format details if we don't fix its
  * padding), but it's probably safe to just let it apply everywhere.
  */
-#views-ui-add-form details details .seven-details__wrapper {
+#views-ui-add-form details details .claro-details__wrapper {
   padding-left: 0;
   padding-right: 0;
 }
 
-.views-display-tab details.box-padding .seven-details__wrapper {
+.views-display-tab details.box-padding .claro-details__wrapper {
   padding: 0;
 }
 
@@ -55,7 +55,7 @@ details.fieldset-no-legend {
 /* @group Dependent options
  */
 
-/* This is necessary to supercede the Seven .form-item
+/* This is necessary to supercede the Claro .form-item
  * reset declaration that sets the margin to zero.
  */
 .form-item-options-expose-required,
@@ -287,7 +287,7 @@ details.fieldset-no-legend {
 }
 
 .views-query-info table tr td:last-child {
-  /* Fixes a Seven style that bleeds down into this table unnecessarily */
+  /* Fixes a Claro style that bleeds down into this table unnecessarily */
   border-right: 0 none; /* LTR */
 }
 [dir="rtl"] .views-query-info table tr td:last-child {
@@ -314,7 +314,7 @@ details.fieldset-no-legend {
  */
 
 .filterable-option .form-item.form-type-checkbox {
-  /* This selector is aggressive because Seven's reset for .form-items is aggressive. */
+  /* This selector is aggressive because Claro's reset for .form-items is aggressive. */
   padding-bottom: 4px;
   padding-left: 4px; /* LTR */
   padding-top: 4px;
