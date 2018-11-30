@@ -2,16 +2,16 @@
 # minor releases.
 # Change record https://www.drupal.org/node/2582945.
 # As the UI of Drupal improves between minor versions, the mark up and assets
-# in the Seven theme will change. The Seven theme is not backwards
-# compatible. If you wish to modify the output or assets of Seven you can:
-# 1. Copy the whole of Seven and rename it as your own administration theme. You
+# in the Claro theme will change. The Claro theme is not backwards
+# compatible. If you wish to modify the output or assets of Claro you can:
+# 1. Copy the whole of Claro and rename it as your own administration theme. You
 # will need to manually manage your own updates if you want to stay up to
-# date with Seven's bug fixes and feature support.
+# date with Claro's bug fixes and feature support.
 #
-# 2. Sub-theme Seven. This is only recommended if you want to make minor
-# tweaks and understand that Seven could break your modifications as it
+# 2. Sub-theme Claro. This is only recommended if you want to make minor
+# tweaks and understand that Claro could break your modifications as it
 # changes.
-name: Seven
+name: Claro
 type: theme
 base theme: classy
 description: 'The default administration theme for Drupal 8 was designed with clean lines, simple blocks, and sans-serif font to emphasize the tools and tasks at hand.'
@@ -20,7 +20,7 @@ package: Core
 version: VERSION
 core: 8.x
 libraries:
- - seven/global-styling
+ - claro/global-styling
 libraries-override:
   system/base:
     css:
@@ -41,7 +41,7 @@ libraries-override:
       component:
         assets/vendor/jquery.ui/themes/base/dialog.css: false
   classy/dialog:
-    seven/seven.drupal.dialog
+    claro/claro.drupal.dialog
   classy/base:
     css:
       component:
@@ -49,13 +49,13 @@ libraries-override:
 
 libraries-extend:
   core/ckeditor:
-    - seven/ckeditor-dialog
+    - claro/ckeditor-dialog
   core/drupal.vertical-tabs:
-    - seven/vertical-tabs
+    - claro/vertical-tabs
   core/jquery.ui:
-    - seven/seven.jquery.ui
+    - claro/claro.jquery.ui
   tour/tour-styling:
-    - seven/tour-styling
+    - claro/tour-styling
 quickedit_stylesheets:
   - css/dist/components/quickedit.css
 regions:

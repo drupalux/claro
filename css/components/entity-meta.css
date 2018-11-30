@@ -9,7 +9,7 @@
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
 }
 .entity-meta__header,
-.entity-meta .seven-details {
+.entity-meta .claro-details {
   background-color: #fcfcfa;
   border-top: 1px solid #bfbfbf;
   border-bottom: 1px solid #bfbfbf;
@@ -30,32 +30,32 @@
 .entity-meta__last-saved {
   font-style: italic; /* As-designed, but really: why is this italic? */
 }
-.entity-meta .seven-details {
+.entity-meta .claro-details {
   border-left: 0;
   border-right: 0;
   border-top: 1px solid #fff;
   margin: 0;
   border-radius: 0;
 }
-.entity-meta .seven-details:last-child {
+.entity-meta .claro-details:last-child {
   border-radius: 0 0 3px 3px;
 }
-.entity-meta .seven-details[open] {
+.entity-meta .claro-details[open] {
   background-color: transparent;
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.125), transparent 4px);
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.125), transparent 4px);
   border-top-width: 0;
   padding-top: 1px;
 }
-.entity-meta .seven-details[open] + .seven-details[open] {
+.entity-meta .claro-details[open] + .claro-details[open] {
   background-image: none;
   border-top-width: 1px;
   padding-top: 0;
 }
-.entity-meta .seven-details > .seven-details__wrapper {
+.entity-meta .claro-details > .claro-details__wrapper {
   padding-top: 0;
 }
-.entity-meta .seven-details > summary {
+.entity-meta .claro-details > summary {
   padding: 0.85em 1.25em;
   text-shadow: 0 1px 0 white;
 }
@@ -67,6 +67,6 @@
  * @todo Consider removing this after https://www.drupal.org/node/2493957 has
  *   been solved.
  */
-.entity-meta .seven-details .summary {
+.entity-meta .claro-details .summary {
   display: none;
 }

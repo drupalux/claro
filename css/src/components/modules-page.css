@@ -3,20 +3,20 @@
   border: 0;
   border-top: 1px solid #ccc;
 }
-.system-modules .seven-details {
+.system-modules .claro-details {
   background: none;
   border: 0;
   margin: 0;
   padding: 0;
 }
-.system-modules .seven-details__summary {
+.system-modules .claro-details__summary {
   border-bottom: 1px solid #ccc;
   padding: 0.95em 0.5em;
 }
-.system-modules [open] .seven-details__summary {
+.system-modules [open] .claro-details__summary {
   border-bottom: none;
 }
-.system-modules .seven-details__wrapper {
+.system-modules .claro-details__wrapper {
   padding: 0 0 0.5em 0;
 }
 .system-modules .fieldset-wrapper {
