@@ -2,25 +2,57 @@
  * @file
  * Tablesort indicator styles.
  */
-
 .tablesort {
+  background-image: none;
   float: right; /* LTR */
-  margin-top: 5px;
+  margin-top: 4px;
   width: 10px;
   height: 10px;
+  position: relative;
+}
+.tablesort::after {
+  background: none;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  height: 0.4em;
+  width: 0.4em;
 }
 [dir="rtl"] .tablesort {
   float: left;
 }
-.tablesort--asc {
-  background-image: url(../../../../misc/icons/004875/twistie-down.svg);
+.tablesort--asc::after {
+  border-bottom: 2px solid var(--color-blue);
+  border-left: 2px solid var(--color-blue);
+  top: 0;
+  transform: rotate(-45deg);
 }
-a:hover .tablesort--asc {
-  background-image: url(../../../../misc/icons/008ee6/twistie-down.svg);
+a:hover .tablesort--asc::after {
+  border-bottom: 0;
+  border-top: 2px solid var(--color-blue);
+  border-left: 2px solid var(--color-blue);
+  top: 4px;
+  transform: rotate(45deg);
 }
-.tablesort--desc {
-  background-image: url(../../../../misc/icons/004875/twistie-up.svg);
+.tablesort--desc::after {
+  border-top: 2px solid var(--color-blue);
+  border-left: 2px solid var(--color-blue);
+  top: 4px;
+  transform: rotate(45deg);
 }
-a:hover .tablesort--desc {
-  background-image: url(../../../../misc/icons/008ee6/twistie-up.svg);
+a:hover .tablesort--desc::after {
+  border-top: 0;
+  border-bottom: 2px solid var(--color-blue);
+  border-left: 2px solid var(--color-blue);
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 60em) {
+  .tablesort::after {
+    height: 0.5em;
+    right: 5px;
+    width: 0.5em;
+  }
 }
