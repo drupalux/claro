@@ -135,3 +135,9 @@ media-form:
       css/dist/components/media.css: {}
   dependencies:
     - media/form
+
+image-widget:
+  version: VERSION
+  css:
+    component:
+      css/dist/layout/image-widget.css: {}

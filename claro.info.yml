@@ -57,6 +57,9 @@ libraries-extend:
     - claro/claro.jquery.ui
   tour/tour-styling:
     - claro/tour-styling
+  classy/image-widget:
+    - claro/image-widget
+
 quickedit_stylesheets:
   - css/dist/components/quickedit.css
 regions:
