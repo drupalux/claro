@@ -199,9 +199,9 @@ function claro_preprocess_form_element(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for input.
+ * Implements template_preprocess_HOOK() for input.
  */
-function seven_preprocess_input(&$variables) {
+function claro_preprocess_input(&$variables) {
   if (
     !empty($variables['element']['#title_display']) &&
     $variables['element']['#title_display'] === 'attribute' &&
@@ -209,12 +209,7 @@ function seven_preprocess_input(&$variables) {
   ) {
     $variables['attributes']['title'] = (string) $variables['element']['#title'];
   }
-}
 
-/**
- * Implements template_preprocess_HOOK() for input.
- */
-function claro_preprocess_input(&$variables) {
   $type_api = $variables['element']['#type'];
   $type_html = $variables['attributes']['type'];
   $text_types_html = [
