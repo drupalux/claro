@@ -7,28 +7,6 @@
   color: var(--color-placeholder-fg);
 }
 
-fieldset:not(.fieldgroup) {
-  background-color: #fcfcfa;
-  border-radius: 2px;
-  margin: 1em 0;
-  padding: 30px 18px 18px;
-  min-width: 0;
-  position: relative;
-}
-fieldset:not(.fieldgroup) > legend {
-  font-size: 1em;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  position: absolute;
-  text-transform: uppercase;
-  top: 10px;
-}
-.fieldgroup {
-  min-width: 0;
-  margin-right: 0;
-  margin-left: 0;
-}
-
 /**
  * General form item.
  */
@@ -94,7 +72,8 @@ td > .form-item:only-child {
   color: var(--color-input-fg-disabled);
   cursor: default; /* @todo ...or auto? */
 }
-.form-item__label.form-required::after {
+.form-item__label.form-required::after,
+.fieldset__label.form-required::after {
   content: "";
   vertical-align: super;
   display: inline-block;
@@ -135,12 +114,68 @@ td > .form-item:only-child {
   margin-bottom: calc(6em / 12); /* 6px */
 }
 
+.form-item__prefix.is-disabled,
+.form-item__suffix.is-disabled {
+  color: var(--color-input-fg-disabled);
+}
+
 /**
  * Form actions.
  */
 .form-actions {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
+}
+
+/**
+ * Fieldset.
+ */
+.fieldset {
+  min-width: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+.fieldset--default {
+  background-color: #fcfcfa;
+  border-radius: 2px;
+  padding: 30px 18px 18px;
+  position: relative;
+}
+.fieldset__legend {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.fieldset__legend--default {
+  font-size: 1em;
+  letter-spacing: 0.08em;
+  position: absolute;
+  top: 10px;
+}
+.fieldset__legend--composite {
+  font-weight: normal;
+  text-transform: none;
+}
+.fieldset__label.is-disabled {
+  color: var(--color-input-fg-disabled);
+}
+.fieldset__description {
+  font-size: calc(12em / 16); /* 12px */
+  line-height: calc(17 / 12); /* 17px */
+  color: var(--color-description-fg);
+  margin-top: calc(6em / 12); /* 6px */
+  margin-bottom: calc(6em / 12); /* 6px */
+}
+.fieldset__description.is-disabled {
+  color: var(--color-input-fg-disabled);
+}
+/* Error message (Inline form errors). */
+.fieldset__error-message {
+  font-size: calc(12em / 16); /* 12px */
+  font-weight: normal;
+  line-height: calc(17 / 12); /* 17px */
+  color: var(--color-input-error);
+  margin-top: calc(6em / 12); /* 6px */
+  margin-bottom: calc(6em / 12); /* 6px */
 }
 
 /**

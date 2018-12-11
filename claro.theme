@@ -221,12 +221,10 @@ function claro_preprocess_input(&$variables) {
     'week',
   ];
 
-  $variables['attributes']['class'][] = 'form-element';
-  $variables['attributes']['class'][] = Html::getClass('form-element--type-' . $type_html);
-  $variables['attributes']['class'][] = Html::getClass('form-element--api-' . $type_api);
-
   if (in_array($type_html, $text_types_html)) {
-    $variables['attributes']['class'][] = 'form-element--basic';
+    $variables['attributes']['class'][] = 'form-element';
+    $variables['attributes']['class'][] = Html::getClass('form-element--type-' . $type_html);
+    $variables['attributes']['class'][] = Html::getClass('form-element--api-' . $type_api);
   }
 }
 
@@ -237,7 +235,6 @@ function claro_preprocess_textarea(&$variables) {
   $variables['attributes']['class'][] = 'form-element';
   $variables['attributes']['class'][] = 'form-element--type-textarea';
   $variables['attributes']['class'][] = 'form-element--api-textarea';
-  $variables['attributes']['class'][] = 'form-element--basic';
 }
 
 /**
@@ -253,6 +250,22 @@ function claro_preprocess_datetime_wrapper(&$variables) {
 
     if (!empty($variables['description_attributes'])) {
       $variables['description_attributes']->addClass('is-disabled');
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_datetime_wrapper().
+ */
+function claro_preprocess_fieldset(&$variables) {
+  if (!empty($variables['element']['#disabled'])) {
+    $variables['legend_span']['attributes']->addClass('is-disabled');
+
+    if (
+      !empty($variables['description']) &&
+      !empty($variables['description']['attributes'])
+    ) {
+      $variables['description']['attributes']->addClass('is-disabled');
     }
   }
 }

@@ -28,8 +28,7 @@ hr {
   background: #ccc;
 }
 
-summary,
-.fieldgroup:not(.form-composite) > legend {
+summary {
   font-weight: bold;
   text-transform: uppercase;
 }

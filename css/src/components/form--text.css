@@ -3,7 +3,7 @@
  * Text and textarea input elements.
  */
 
-.form-element--basic {
+.form-element {
   appearance: none; /* Being able to control inner box shadow on iOS. */
   box-sizing: border-box;
   padding: calc(0.75em - var(--size-input-border)) calc(1em - var(--size-input-border));
@@ -50,7 +50,7 @@
  * States.
  */
 
-.form-element--basic.error {
+.form-element.error {
   border-width: var(--size-input-border);
   border-color: var(--color-input-border-error);
   box-shadow: inset 0 0 0 var(--size-input-border) var(--color-input-border-error);
@@ -61,18 +61,18 @@
   border-color: var(--color-input-border-error);
 }
 
-.form-element--basic:hover {
+.form-element:hover {
   border-color: var(--color-input-border-hover);
   box-shadow: inset 0 0 0 var(--size-input-border) var(--color-input-border-hover);
 }
 
-.form-element--basic:focus {
+.form-element:focus {
   outline: none;
   border-color: var(--color-input-border-focus);
   box-shadow: inset 0 0 0 var(--size-input-border) var(--color-input-border-focus);
 }
 
-.form-element--basic[disabled] {
+.form-element[disabled] {
   color: var(--color-input-fg-disabled);
   background-color: var(--color-input-bg-disabled);
   border-color: var(--color-input-border-disabled);
@@ -84,7 +84,7 @@
  */
 @media screen and (max-width: 600px) {
   /* Number, date and time are skipped here */
-  .form-element--basic {
+  .form-element {
     width: 100%;
   }
 }
