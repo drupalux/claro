@@ -238,7 +238,7 @@ function claro_preprocess_textarea(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_datetime_wrapper().
+ * Implements template_preprocess_HOOK() for datetime_wrapper.
  */
 function claro_preprocess_datetime_wrapper(&$variables) {
   if (!empty($variables['element']['#errors'])) {
@@ -255,7 +255,7 @@ function claro_preprocess_datetime_wrapper(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_datetime_wrapper().
+ * Implements template_preprocess_HOOK() for fieldset.
  */
 function claro_preprocess_fieldset(&$variables) {
   if (!empty($variables['element']['#disabled'])) {
