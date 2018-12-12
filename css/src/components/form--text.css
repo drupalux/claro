@@ -1,0 +1,90 @@
+/**
+ * @file
+ * Text and textarea input elements.
+ */
+
+.form-element {
+  appearance: none; /* Being able to control inner box shadow on iOS. */
+  box-sizing: border-box;
+  padding: calc(0.75em - var(--size-input-border)) calc(1em - var(--size-input-border));
+  max-width: 100%;
+  border: var(--size-input-border) solid var(--color-input-border);
+  border-radius: var(--size-input-border-radius);
+  background: var(--color-input-bg);
+  font-size: 1em;
+  line-height: 1.5;
+  color: var(--color-input-fg);
+  transition: border linear var(--speed-transition), box-shadow linear var(--speed-transition);
+  min-height: 3em; /* iOS. */
+}
+
+/**
+ * Override normalize.css's search appearance.
+ */
+.form-element--type-search[type="search"] {
+  appearance: none;
+  box-sizing: border-box;
+}
+
+/**
+ * Fix minor things for specific types.
+ */
+.form-element--type-date,
+.form-element--type-time {
+  vertical-align: -webkit-baseline-middle; /* Prevent iOS input jump while filling. */
+}
+.form-element--type-date {
+  min-width: 9.5em; /* Prevent input width change while filling. */
+}
+.form-element--type-time {
+  min-width: 7.5em; /* Prevent input width change while filling. */
+}
+
+.form-element--type-color {
+  min-width: 3em; /* Bigger input for webkit */
+  padding: 0; /* Bigger pickable area */
+  text-indent: calc(0.75em - 0.0625em); /* Text-input fallback for non-supporting browsers like Safari */
+}
+
+/**
+ * States.
+ */
+
+.form-element.error {
+  border-width: var(--size-input-border);
+  border-color: var(--color-input-border-error);
+  box-shadow: inset 0 0 0 var(--size-input-border) var(--color-input-border-error);
+}
+
+.form-element--type-textarea.error + .cke {
+  border-width: var(--size-input-border);
+  border-color: var(--color-input-border-error);
+}
+
+.form-element:hover {
+  border-color: var(--color-input-border-hover);
+  box-shadow: inset 0 0 0 var(--size-input-border) var(--color-input-border-hover);
+}
+
+.form-element:focus {
+  outline: none;
+  border-color: var(--color-input-border-focus);
+  box-shadow: inset 0 0 0 var(--size-input-border) var(--color-input-border-focus);
+}
+
+.form-element[disabled] {
+  color: var(--color-input-fg-disabled);
+  background-color: var(--color-input-bg-disabled);
+  border-color: var(--color-input-border-disabled);
+  box-shadow: none;
+}
+
+/**
+ * Improve form element usability on narrow devices.
+ */
+@media screen and (max-width: 600px) {
+  /* Number, date and time are skipped here */
+  .form-element {
+    width: 100%;
+  }
+}

@@ -19,6 +19,8 @@ global-styling:
       css/dist/components/entity-meta.css: {}
       css/dist/components/field-ui.css: {}
       css/dist/components/form.css: {}
+      css/dist/components/form--select.css: {}
+      css/dist/components/form--text.css: {}
       css/dist/components/help.css: {}
       css/dist/components/menus-and-lists.css: {}
       css/dist/components/modules-page.css: {}
@@ -133,3 +135,9 @@ media-form:
       css/dist/components/media.css: {}
   dependencies:
     - media/form
+
+image-widget:
+  version: VERSION
+  css:
+    component:
+      css/dist/layout/image-widget.css: {}

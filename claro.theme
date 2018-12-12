@@ -5,6 +5,7 @@
  * Functions to support theming in the Claro theme.
  */
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\media\MediaForm;
 
@@ -177,5 +178,91 @@ function claro_form_media_form_alter(&$form, FormStateInterface $form_state) {
     // display a top border over the published checkbox by defining a
     // media-edit-form.html.twig template the same way node does.
     $form['#attached']['library'][] = 'claro/media-form';
+  }
+}
+
+/**
+ * Implements hook_preprocess_form_element().
+ */
+function claro_preprocess_form_element(&$variables) {
+  if (!empty($variables['element']['#errors'])) {
+    $variables['label']['#attributes']['class'][] = 'has-error';
+  }
+
+  if ($variables['disabled']) {
+    $variables['label']['#attributes']['class'][] = 'is-disabled';
+
+    if (!empty($variables['description']['attributes'])) {
+      $variables['description']['attributes']->addClass('is-disabled');
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_HOOK() for input.
+ */
+function claro_preprocess_input(&$variables) {
+  $type_api = $variables['element']['#type'];
+  $type_html = $variables['attributes']['type'];
+  $text_types_html = [
+    'text',
+    'email',
+    'tel',
+    'number',
+    'search',
+    'password',
+    'date',
+    'time',
+    'file',
+    'color',
+    'datetime-local',
+    'url',
+    'month',
+    'week',
+  ];
+
+  if (in_array($type_html, $text_types_html)) {
+    $variables['attributes']['class'][] = 'form-element';
+    $variables['attributes']['class'][] = Html::getClass('form-element--type-' . $type_html);
+    $variables['attributes']['class'][] = Html::getClass('form-element--api-' . $type_api);
+  }
+}
+
+/**
+ * Implements template_preprocess_HOOK() for textarea.
+ */
+function claro_preprocess_textarea(&$variables) {
+  $variables['attributes']['class'][] = 'form-element';
+  $variables['attributes']['class'][] = 'form-element--type-textarea';
+  $variables['attributes']['class'][] = 'form-element--api-textarea';
+}
+
+/**
+ * Implements template_preprocess_HOOK() for datetime_wrapper.
+ */
+function claro_preprocess_datetime_wrapper(&$variables) {
+  if (!empty($variables['element']['#errors'])) {
+    $variables['title_attributes']['class'][] = 'has-error';
+  }
+
+  if (!empty($variables['element']['#disabled'])) {
+    $variables['title_attributes']['class'][] = 'is-disabled';
+
+    if (!empty($variables['description_attributes'])) {
+      $variables['description_attributes']->addClass('is-disabled');
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_HOOK() for fieldset.
+ */
+function claro_preprocess_fieldset(&$variables) {
+  if (!empty($variables['element']['#disabled'])) {
+    $variables['legend_span']['attributes']->addClass('is-disabled');
+
+    if (!empty($variables['description']) && !empty($variables['description']['attributes'])) {
+      $variables['description']['attributes']->addClass('is-disabled');
+    }
   }
 }

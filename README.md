@@ -1,7 +1,8 @@
 # Claro Drupal admin theme
 
 ## Pre-requisites
-Before starting, ensure that you are using at least the latest LTS release of Node.js, once Node.js has been installed, we recommend to install yarn
+Before starting, ensure that you are using at least the latest LTS release of
+Node.js, once Node.js has been installed, we recommend to install yarn
 ```
 npm i -g yarn
 ```
@@ -12,7 +13,8 @@ yarn install
 ```
 
 ## Working on Javascript
-When developing JavaScript locally you can use the watcher to make changes and have them compiled as you save as well as generate source maps.
+When developing JavaScript locally you can use the watcher to make changes and
+have them compiled as you save as well as generate source maps.
 
 ```
 yarn run watch:js
