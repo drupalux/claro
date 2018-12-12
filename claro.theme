@@ -261,10 +261,7 @@ function claro_preprocess_fieldset(&$variables) {
   if (!empty($variables['element']['#disabled'])) {
     $variables['legend_span']['attributes']->addClass('is-disabled');
 
-    if (
-      !empty($variables['description']) &&
-      !empty($variables['description']['attributes'])
-    ) {
+    if (!empty($variables['description']) && !empty($variables['description']['attributes'])) {
       $variables['description']['attributes']->addClass('is-disabled');
     }
   }
