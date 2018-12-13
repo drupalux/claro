@@ -86,5 +86,13 @@
   /* Number, date and time are skipped here */
   .form-element {
     width: 100%;
+    float: none;
+    margin-top: 0.75em;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .form-element:first-child,
+  .form-item__label + .form-element {
+    margin-top: 0;
   }
 }

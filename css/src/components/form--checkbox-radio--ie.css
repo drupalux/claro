@@ -3,8 +3,7 @@
  * Checkbox and radio input elements styles for IE11 and below.
  */
 
-.form-element--type-checkbox::-ms-check,
-.form-element--type-radio::-ms-check {
+.form-boolean::-ms-check {
   transition: all var(--speed-transition) ease-in-out 0s, background-image 0s linear 0s;
   border: 1px solid var(--color-input-border);
   display: inline-block;
@@ -20,64 +19,60 @@
   box-sizing: border-box;
   color: transparent; /* IE */
 }
-.form-element--type-radio::-ms-check {
+.form-boolean--type-radio::-ms-check {
   border-radius: 19px;
   width: 19px;
   height: 19px;
 }
-.form-element--type-checkbox:focus::-ms-check,
-.form-element--type-radio:focus::-ms-check {
+.form-boolean:focus::-ms-check {
   box-shadow: 0 0 0 4px var(--color-input-focus-shadow);
   outline: none;
   color: transparent; /* IE */
 }
-.form-element--type-checkbox:hover::-ms-check,
-.form-element--type-radio:hover::-ms-check {
+.form-boolean:hover::-ms-check {
   border-color: var(--color-input-fg);
   box-shadow: inset 0 0 0 1px var(--color-input-fg);
 }
-.form-element--type-checkbox:focus:hover::-ms-check,
-.form-element--type-radio:focus:hover::-ms-check {
+.form-boolean:focus:hover::-ms-check {
   outline: none;
   box-shadow: 0 0 0 4px var(--color-input-focus-shadow), inset 0 0 0 1px var(--color-input-fg);
 }
-.form-element--type-checkbox:checked::-ms-check {
+.form-boolean--type-checkbox:checked::-ms-check {
   background-color: var(--color-input-border-focus);
   border-color: var(--color-input-border-focus);
   background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.7949219,7.095703 6.1816406,9.601563 12.205078,3.2753906 13.689453,4.8359375 6.1816406,12.724609 2.3105469,8.65625 Z' fill='%23fff'/%3E%3C/svg%3E");
   color: transparent; /* IE */
 }
-.form-element--type-radio:checked::-ms-check {
+.form-boolean--type-radio:checked::-ms-check {
   border-color: var(--color-input-border-focus);
   background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle r='4.5' cx='8.5' cy='8.5' fill='%23004adc'/%3E%3C/svg%3E");
   box-shadow: inset 0 0 0 1px var(--color-input-border-focus);
   color: transparent; /* IE */
   outline: none;
 }
-.form-element--type-radio:checked:focus::-ms-check {
+.form-boolean--type-radio:checked:focus::-ms-check {
   border-color: var(--color-input-border-focus);
   background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle r='4.5' cx='8.5' cy='8.5' fill='%23004adc'/%3E%3C/svg%3E");
   box-shadow: 0 0 0 4px var(--color-input-focus-shadow), inset 0 0 0 1px var(--color-input-border-focus);
   outline: none;
 }
-.form-element--type-checkbox:checked:hover::-ms-check {
+.form-boolean--type-checkbox:checked:hover::-ms-check {
   background-color: var(--color-input-fg);
   border-color: var(--color-input-fg);
 }
-.form-element--type-radio:checked:hover::-ms-check {
+.form-boolean--type-radio:checked:hover::-ms-check {
   border-color: var(--color-input-fg);
   background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle r='4.5' cx='8.5' cy='8.5' fill='%23222330'/%3E%3C/svg%3E");
   box-shadow: inset 0 0 0 1px var(--color-input-fg);
 }
-.form-element--type-checkbox:active::-ms-check {
+.form-boolean--type-checkbox:active::-ms-check {
   box-shadow: 0 0 0 4px var(--color-input-focus-shadow);
 }
-.form-element--type-checkbox:active:hover::-ms-check,
-.form-element--type-radio:active:hover::-ms-check,
-.form-element--type-radio:checked:active:hover::-ms-check {
+.form-boolean:active:hover::-ms-check,
+.form-boolean--type-radio:checked:active:hover::-ms-check {
   box-shadow: 0 0 0 4px var(--color-input-focus-shadow), inset 0 0 0 1px var(--color-input-fg);
 }
-.form-element--type-radio:checked:focus:hover::-ms-check {
+.form-boolean--type-radio:checked:focus:hover::-ms-check {
   border-color: var(--color-input-fg);
   background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle r='4.5' cx='8.5' cy='8.5' fill='%23222330'/%3E%3C/svg%3E");
   box-shadow: 0 0 0 4px var(--color-input-focus-shadow), inset 0 0 0 1px var(--color-input-fg);
@@ -86,73 +81,62 @@
 /**
  * Error states.
  */
-.form-element--type-checkbox.error::-ms-check,
-.form-element--type-radio.error::-ms-check {
+.form-boolean.error::-ms-check {
   background-color: var(--color-input-bg);
   border-color: var(--color-input-border-error);
   box-shadow: inset 0 0 0 1px var(--color-input-border-error);
 }
-.form-element--type-checkbox.error:focus::-ms-check,
-.form-element--type-radio.error:focus::-ms-check {
+.form-boolean.error:focus::-ms-check {
   box-shadow: 0 0 0 4px var(--color-input-focus-shadow), inset 0 0 0 1px var(--color-input-border-error);
 }
-.form-element--type-checkbox.error:hover::-ms-check,
-.form-element--type-radio.error:hover::-ms-check {
+.form-boolean.error:hover::-ms-check {
   box-shadow: inset 0 0 0 1px var(--color-input-border-error);
 }
-.form-element--type-checkbox.error:focus:hover::-ms-check,
-.form-element--type-radio.error:focus:hover::-ms-check {
+.form-boolean.error:focus:hover::-ms-check {
   box-shadow: 0 0 0 4px var(--color-input-focus-shadow), inset 0 0 0 1px var(--color-input-border-error);
 }
-.form-element--type-checkbox.error:checked::-ms-check {
+.form-boolean--type-checkbox.error:checked::-ms-check {
   background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.7949219,7.095703 6.1816406,9.601563 12.205078,3.2753906 13.689453,4.8359375 6.1816406,12.724609 2.3105469,8.65625 Z' fill='%23d72222'/%3E%3C/svg%3E");
 }
-.form-element--type-radio.error:checked::-ms-check,
-.form-element--type-radio.error:checked:hover::-ms-check {
+.form-boolean--type-radio.error:checked::-ms-check,
+.form-boolean--type-radio.error:checked:hover::-ms-check {
   background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle r='4.5' cx='8.5' cy='8.5' fill='%23d72222'/%3E%3C/svg%3E");
 }
-.form-element--type-checkbox.error:checked:hover::-ms-check,
-.form-element--type-radio.error:checked:hover::-ms-check {
+.form-boolean.error:checked:hover::-ms-check {
   box-shadow: inset 0 0 0 1px var(--color-input-border-error);
   background-color: var(--color-input-bg);
   border-color: var(--color-input-border-error);
 }
-.form-element--type-checkbox.error:checked:focus:hover::-ms-check,
-.form-element--type-radio.error:checked:focus::-ms-check,
-.form-element--type-radio.error:checked:focus:hover::-ms-check {
+.form-boolean.error:checked:focus::-ms-check,
+.form-boolean--type-radio.error:checked:focus:hover::-ms-check {
   box-shadow: 0 0 0 4px var(--color-input-focus-shadow), inset 0 0 0 1px var(--color-input-border-error);
   border-color: var(--color-input-border-error);
 }
-.form-element--type-checkbox.error:active:hover::-ms-check,
-.form-element--type-radio.error:active:hover::-ms-check,
-.form-element--type-radio.error:checked:active:hover::-ms-check {
+.form-boolean.error:active:hover::-ms-check,
+.form-boolean--type-radio.error:checked:active:hover::-ms-check {
   box-shadow: 0 0 0 4px var(--color-input-focus-shadow), inset 0 0 0 1px var(--color-input-border-error);
 }
 
 /**
  * Disabled states.
  */
-.form-element--type-checkbox[disabled]::-ms-check,
-.form-element--type-radio[disabled]::-ms-check,
-.form-element--type-checkbox[disabled]:hover::-ms-check,
-.form-element--type-radio[disabled]:hover::-ms-check,
-.form-element--type-radio[disabled]:focus:active::-ms-check,
-.form-element--type-radio[disabled]:active:hover::-ms-check,
-.form-element--type-checkbox[disabled].error::-ms-check,
-.form-element--type-radio[disabled].error::-ms-check,
-.form-element--type-checkbox[disabled].error:hover::-ms-check,
-.form-element--type-radio[disabled].error:hover::-ms-check,
-.form-element--type-radio[disabled].error:active:hover::-ms-check {
+.form-boolean[disabled]::-ms-check,
+.form-boolean[disabled]:hover::-ms-check,
+.form-boolean[disabled].error::-ms-check,
+.form-boolean[disabled].error:hover::-ms-check,
+.form-boolean--type-radio[disabled]:focus:active::-ms-check,
+.form-boolean--type-radio[disabled]:active:hover::-ms-check,
+.form-boolean--type-radio[disabled].error:active:hover::-ms-check {
   box-shadow: none;
   background-color: var(--color-input-bg-disabled);
   border-color: var(--color-input-border-disabled);
 }
-.form-element--type-checkbox[disabled]:checked::-ms-check {
+.form-boolean--type-checkbox[disabled]:checked::-ms-check {
   background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.7949219,7.095703 6.1816406,9.601563 12.205078,3.2753906 13.689453,4.8359375 6.1816406,12.724609 2.3105469,8.65625 Z' fill='%2382828c'/%3E%3C/svg%3E");
   color: transparent; /* IE */
 }
-.form-element--type-radio[disabled]:checked::-ms-check,
-.form-element--type-radio[disabled].error:checked::-ms-check {
+.form-boolean--type-radio[disabled]:checked::-ms-check,
+.form-boolean--type-radio[disabled].error:checked::-ms-check {
   background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle r='4.5' cx='8.5' cy='8.5' fill='%2382828c'/%3E%3C/svg%3E");
   color: transparent; /* IE */
 }
