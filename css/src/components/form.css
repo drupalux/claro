@@ -147,6 +147,9 @@ td > .form-item:only-child {
 .fieldset__label.is-disabled {
   color: var(--color-input-fg-disabled);
 }
+.fieldset__label.has-error {
+  color: var(--color-input-error);
+}
 .fieldset__description {
   font-size: calc(12em / 16); /* 12px */
   line-height: calc(17 / 12); /* 17px */

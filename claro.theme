@@ -271,7 +271,14 @@ function claro_preprocess_datetime_wrapper(&$variables) {
  * Implements template_preprocess_HOOK() for fieldset.
  */
 function claro_preprocess_fieldset(&$variables) {
-  if (!empty($variables['element']['#disabled'])) {
+  $element = $variables['element'];
+  $composite_types = ['checkboxes', 'radios'];
+
+  if (in_array($element['#type'], $composite_types) && !empty($variables['element']['#children_errors'])) {
+    $variables['legend_span']['attributes']->addClass('has-error');
+  }
+
+  if (!empty($element['#disabled'])) {
     $variables['legend_span']['attributes']->addClass('is-disabled');
 
     if (!empty($variables['description']) && !empty($variables['description']['attributes'])) {
