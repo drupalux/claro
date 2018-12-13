@@ -74,6 +74,9 @@
 
 .form-element[disabled] {
   color: var(--color-input-fg-disabled);
+  /* https://stackoverflow.com/q/262158#answer-23511280 */
+  -webkit-text-fill-color: var(--color-input-fg-disabled);
+  -webkit-opacity: 1;
   background-color: var(--color-input-bg-disabled);
   border-color: var(--color-input-border-disabled);
   box-shadow: none;
