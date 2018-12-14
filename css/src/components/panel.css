@@ -4,14 +4,19 @@
  */
 
 .panel {
-  margin: 0 0 20px;
-  padding: 9px;
-  background: #f8f8f8;
-  border: 1px solid #ccc;
+  margin-top: 1em;
+  margin-bottom: 3em;
+  padding: 0;
+  border-bottom: calc(1em / 16) solid var(--color-lightgray);
 }
 .panel__title {
-  font-size: 1em;
-  text-transform: uppercase;
   margin: 0;
-  padding-bottom: 9px;
+  padding: calc(12em / 18) calc(24em / 18);
+  font-size: calc(18em / 16);
+  line-height: calc(24em / 18);
+  background: var(--color-whitesmoke);
+}
+.panel__content,
+.panel__description {
+  padding: 1em 1.5em;
 }

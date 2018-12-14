@@ -1,45 +1,76 @@
 /**
- * Admin lists.
+ * @file
+ * Admin list and admin item modules.
  */
-ul.admin-list {
-  margin: 0;
+
+/**
+ * Admin list (wrapper of admin items).
+ */
+.admin-list {
+  margin-top: 1em;
+  margin-bottom: 2em;
   padding: 0;
+  border: calc(1em / 16) solid var(--color-lightgray);
+  border-right: 0;
+  border-left: 0;
 }
-.admin-list li {
+.admin-list--panel {
+  margin: -1em -1.5em;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+/**
+ * Admin item.
+ */
+.admin-item {
+  padding: 0.75em 1.5em;
+}
+.admin-item--expanded {
+  padding-left: 3em;
+}
+[dir="rtl"] .admin-item--expanded {
+  padding-right: 3em;
+  padding-left: 1.5em;
+}
+.admin-item + .admin-item {
+  border-top: calc(1em / 16) solid var(--color-lightgray);
+}
+.admin-item__title {
+  font-weight: bold;
+}
+.admin-item__title--expanded a {
+  display: inline-block;
+  margin-left: -1.5em;
+  padding-left: 1.5em;
   position: relative;
-  margin: 0;
-  list-style-type: none;
-  list-style-image: none;
-  padding: 0;
 }
-.admin-list.compact li {
-  border: none;
+[dir="rtl"] .admin-item__title--expanded a {
+  margin-right: -1.5em;
+  margin-left: 0;
+  padding-right: 1.5em;
+  padding-left: 0;
 }
-.admin-list li a {
-  background: url(../../../../misc/icons/bebebe/chevron-disc-right.svg) no-repeat 1px 16px; /* LTR */
+.admin-item__title--expanded a::before {
   display: block;
-  padding: 14px 15px 14px 25px; /* LTR */
-  min-height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1.5em;
+  background: transparent no-repeat 50% 50%;
+  background-image: url("data:image/svg+xml,%3Csvg width='9' height='14' viewBox='0 0 9 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 1.7109375,0.31445312 0.2890625,1.7226562 5.5917969,7.0761719 0.2890625,12.429688 1.7109375,13.837891 8.4082031,7.0761719 Z' fill='%23004adc'/%3E%3C/svg%3E");
+  content: "";
 }
-[dir="rtl"] .admin-list li a {
-  background: url(../../../../misc/icons/bebebe/chevron-disc-left.svg) no-repeat right 16px;
-  padding-right: 25px;
-  padding-left: 15px;
+[dir="rtl"] .admin-item__title--expanded a::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='9' height='14' viewBox='0 0 9 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 6.9863281,0.31445312 8.4082031,1.7226562 3.1054687,7.0761719 8.4082031,12.429688 6.9863281,13.837891 0.2890625,7.0761719 Z' fill='%23004adc'/%3E%3C/svg%3E");
+  left: auto;
+  right: 0;
 }
-.admin-list.compact li a {
-  background-image: none;
-  padding: 2px 0;
+.admin-item__description {
+  margin: 0.5em 0 0.25em;
+  color: var(--color-oldsilver);
 }
-.admin-list li a:hover,
-.admin-list li a:focus,
-.admin-list li a:active {
-  text-decoration: none;
-}
-.admin-list li a .label {
-  font-size: 1.0769em;
-}
-.admin-list li a:hover .label,
-.admin-list li a:focus .label,
-.admin-list li a:active .label {
-  text-decoration: underline;
+[dir="rtl"] .admin-item__description {
+  margin-right: 0;
 }

@@ -59,6 +59,8 @@ libraries-extend:
     - claro/tour-styling
   classy/image-widget:
     - claro/image-widget
+  system/admin:
+    - claro/system.admin
 
 quickedit_stylesheets:
   - css/dist/components/quickedit.css

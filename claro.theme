@@ -99,12 +99,21 @@ function claro_preprocess_block(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for block admin page templates.
+ * Implements template_preprocess_HOOK() for admin_block.
+ */
+function claro_preprocess_admin_block(&$variables) {
+  if (!empty($variables['block']['content'])) {
+    $variables['block']['content']['#attributes']['class'][] = 'admin-list--panel';
+  }
+}
+
+/**
+ * Implements template_preprocess_HOOK() for admin_block.
  */
 function claro_preprocess_admin_block_content(&$variables) {
-  if (!empty($variables['content'])) {
-    foreach ($variables['content'] as $key => $item) {
-      $variables['content'][$key]['url'] = $item['url']->toString();
+  foreach ($variables['content'] as $id => $item) {
+    if (empty($item['description']) || empty($item['description']['#markup'])) {
+      unset($variables['content'][$id]['description']);
     }
   }
 }
@@ -128,6 +137,10 @@ function claro_element_info_alter(&$type) {
   // We require Modernizr for button styling.
   if (isset($type['button'])) {
     $type['button']['#attached']['library'][] = 'core/modernizr';
+  }
+
+  if (!empty($theme_registry['admin_block_content'])) {
+    $theme_registry['admin_block_content']['variables']['attributes'] = [];
   }
 }
 

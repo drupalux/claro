@@ -141,3 +141,9 @@ image-widget:
   css:
     component:
       css/dist/layout/image-widget.css: {}
+
+system.admin:
+  version: VERSION
+  css:
+    theme:
+      css/dist/layout/system-admin--layout.css: {}
