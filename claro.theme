@@ -162,6 +162,7 @@ function _claro_text_format_prerender($element) {
  */
 function claro_preprocess_filter_guidelines(&$variables) {
   // Fix filter guidelines selector issue of 'filter/drupal.filter'.
+  // @todo Remove when https://www.drupal.org/node/2881212 is fixed.
   $variables['attributes']['class'][] = 'filter-guidelines-item';
   $variables['attributes']['class'][] = 'filter-guidelines-' . $variables['format']->id();
 }
