@@ -138,7 +138,12 @@ function claro_element_info_alter(&$type) {
   if (isset($type['button'])) {
     $type['button']['#attached']['library'][] = 'core/modernizr';
   }
+}
 
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function claro_theme_registry_alter(&$theme_registry) {
   if (!empty($theme_registry['admin_block_content'])) {
     $theme_registry['admin_block_content']['variables']['attributes'] = [];
   }
