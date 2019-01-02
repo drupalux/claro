@@ -8,7 +8,7 @@ module.exports = {
     '--color-text': '#222330',
     '--color-whitesmoke': '#f3f4f9',
     // Secondary.
-    '--color-lightgray': '#d4d4d8',
+    '--color-lightgray': '#d8d9e0',
     '--color-grayblue': '#8e929c',
     '--color-oldsilver': '#82828c',
     '--color-davysgrey': '#545560',
