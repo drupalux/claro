@@ -98,7 +98,7 @@
 }
 [disabled] + .cke iframe,
 [disabled] + .cke .cke_source {
-  opacity: 0.5;
+  opacity: 0.505;
 }
 [disabled] + .cke .cke_bottom {
   background: var(--color-input-bg-disabled);
