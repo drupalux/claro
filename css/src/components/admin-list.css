@@ -25,8 +25,8 @@
   padding-right: 3em;
   padding-left: 1.5em;
 }
-.admin-item + .admin-item {
-  border-top: calc(1em / 16) solid var(--color-lightgray);
+.admin-item:not(:last-child) {
+  border-bottom: calc(1em / 16) solid var(--color-lightgray);
 }
 .admin-item__title {
   font-weight: bold;
