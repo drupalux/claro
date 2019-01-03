@@ -73,6 +73,10 @@ libraries-extend:
 
 quickedit_stylesheets:
   - css/dist/components/quickedit.css
+ckeditor_stylesheets:
+  - css/dist/base/elements.css
+  - css/dist/base/typography.css
+
 regions:
   header: 'Header'
   pre_content: 'Pre-content'

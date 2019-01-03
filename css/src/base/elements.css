@@ -8,6 +8,10 @@ body {
   font: normal 16px/1.5 var(--font-family);
 }
 
+body.cke_editable {
+  margin: 1em calc(1em - var(--size-input-border) - var(--size-input-border));
+}
+
 a,
 .link {
   color: var(--color-link);
