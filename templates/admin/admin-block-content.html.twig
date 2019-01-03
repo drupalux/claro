@@ -18,14 +18,13 @@
 {%
   set item_classes = [
     'admin-item',
-    compact ? 'admin-item--compact' : 'admin-item--expanded',
   ]
 %}
 {% if content %}
   <dl{{ attributes.addClass('admin-list') }}>
     {% for item in content %}
       <div{{ create_attribute({class: item_classes}) }}>
-        <dt class="admin-item__title{{ not compact ? ' admin-item__title--expanded'}}">{{ item.link }}</dt>
+        <dt class="admin-item__title">{{ item.link }}</dt>
         {% if item.description %}
           <dd class="admin-item__description">{{ item.description }}</dd>
         {% endif %}

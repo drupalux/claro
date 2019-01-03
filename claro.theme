@@ -6,6 +6,7 @@
  */
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Link;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\media\MediaForm;
 
@@ -111,9 +112,14 @@ function claro_preprocess_admin_block(&$variables) {
  * Implements template_preprocess_HOOK() for admin_block.
  */
 function claro_preprocess_admin_block_content(&$variables) {
-  foreach ($variables['content'] as $id => $item) {
+  foreach ($variables['content'] as $id => &$item) {
+    $link_attributes = $item['url']->getOption('attributes') ?: [];
+    $link_attributes['class'][] = 'admin-item__link';
+    $item['url']->setOption('attributes', $link_attributes);
+    $item['link'] = Link::fromTextAndUrl($item['title'], $item['url']);
+
     if (empty($item['description']) || empty($item['description']['#markup'])) {
-      unset($variables['content'][$id]['description']);
+      unset($item['description']);
     }
   }
 }
