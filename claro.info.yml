@@ -47,6 +47,15 @@ libraries-override:
       component:
         css/components/details.css: false
         css/components/form.css: false
+  # @todo Refactor when https://www.drupal.org/node/2642122 is fixed.
+  filter/drupal.filter.admin:
+    css:
+      theme:
+        /core/themes/stable/css/filter/filter.admin.css: css/dist/theme/filter.theme.css
+  filter/drupal.filter:
+    css:
+      theme:
+        /core/themes/stable/css/filter/filter.admin.css: css/dist/theme/filter.theme.css
 
 libraries-extend:
   core/ckeditor:
@@ -59,9 +68,15 @@ libraries-extend:
     - claro/tour-styling
   classy/image-widget:
     - claro/image-widget
+  ckeditor/drupal.ckeditor:
+    - claro/ckeditor-editor
 
 quickedit_stylesheets:
   - css/dist/components/quickedit.css
+ckeditor_stylesheets:
+  - css/dist/base/elements.css
+  - css/dist/base/typography.css
+
 regions:
   header: 'Header'
   pre_content: 'Pre-content'

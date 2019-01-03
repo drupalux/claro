@@ -8,6 +8,7 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\media\MediaForm;
+use Drupal\Core\Template\Attribute;
 
 /**
  * Implements hook_preprocess_HOOK() for HTML document templates.
@@ -118,16 +119,75 @@ function claro_preprocess_menu_local_action(array &$variables) {
 
   // We require Modernizr's touch test for button styling.
   $variables['#attached']['library'][] = 'core/modernizr';
-  $variables['#attached']['library'][] = 'core/modernizr';
 }
 
 /**
  * Implements hook_element_info_alter().
  */
-function claro_element_info_alter(&$type) {
+function claro_element_info_alter(&$types) {
   // We require Modernizr for button styling.
-  if (isset($type['button'])) {
-    $type['button']['#attached']['library'][] = 'core/modernizr';
+  if (isset($types['button'])) {
+    $types['button']['#attached']['library'][] = 'core/modernizr';
+  }
+
+  // @todo Refactor when https://www.drupal.org/node/3016343 is fixed.
+  if (isset($types['text_format'])) {
+    $types['text_format']['#pre_render'][] = '_claro_text_format_prerender';
+  }
+}
+
+/**
+ * Prerender callback for text_format elements.
+ */
+function _claro_text_format_prerender($element) {
+  // Add clearfix for filter wrapper.
+  $element['format']['#attributes']['class'][] = 'clearfix';
+  // Hide format select label visually.
+  $element['format']['format']['#title_display'] = 'invisible';
+
+  // Fix JS inconsistencies of the 'text_textarea_with_summary' widgets.
+  // @todo Remove when https://www.drupal.org/node/3016343 is fixed.
+  if (
+    !empty($element['summary']) &&
+    $element['summary']['#type'] === 'textarea'
+  ) {
+    $element['#attributes']['class'][] = 'js-text-format-wrapper';
+    $element['value']['#wrapper_attributes']['class'][] = 'js-form-type-textarea';
+  }
+  return $element;
+}
+
+/**
+ * Implements template_preprocess_filter_guidelines().
+ */
+function claro_preprocess_filter_guidelines(&$variables) {
+  // Fix filter guidelines selector issue of 'filter/drupal.filter'.
+  // @todo Remove when https://www.drupal.org/node/2881212 is fixed.
+  $variables['attributes']['class'][] = 'filter-guidelines-item';
+  $variables['attributes']['class'][] = 'filter-guidelines-' . $variables['format']->id();
+}
+
+/**
+ * Implements template_preprocess_text_format_wrapper().
+ *
+ * @todo Remove when https://www.drupal.org/node/3016343 is fixed.
+ */
+function claro_preprocess_text_format_wrapper(&$variables) {
+  $description_attributes = [];
+  if (!empty($variables['attributes']['id'])) {
+    $description_attributes['id'] = $variables['attributes']['aria-describedby'] = $variables['attributes']['id'];
+    unset($variables['attributes']['id']);
+  }
+  $variables['description_attributes'] = new Attribute($description_attributes);
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function claro_theme_registry_alter(&$theme_registry) {
+  // @todo Remove when https://www.drupal.org/node/3016346 is fixed.
+  if (!empty($theme_registry['text_format_wrapper'])) {
+    $theme_registry['text_format_wrapper']['variables']['disabled'] = FALSE;
   }
 }
 

@@ -160,13 +160,7 @@
   background: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  color: #0074bd;
   text-decoration: none;
-}
-.link:hover,
-.link:focus {
-  color: #008ee6;
-  text-decoration: underline;
 }
 
 /**

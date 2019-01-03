@@ -1,0 +1,52 @@
+/**
+ * @file
+ * Styling for the Filter module.
+ */
+
+/**
+ * Filter information under field.
+ */
+.text-full > .form-item {
+  margin-bottom: 0;
+}
+
+.filter-wrapper {
+  border: 0;
+  margin-top: 0.5em; /* (8 / 16) */
+  margin-bottom: 0.5em; /* (8 / 16) */
+  padding: 0;
+}
+.filter-wrapper .form-item {
+  margin: 0;
+}
+.filter-wrapper .form-item label {
+  display: inline;
+}
+
+.filter-help {
+  padding-top: 0.25em; /* (3 / 12), because font size is 12px */
+  padding-bottom: 0.25em; /* (3 / 12) */
+  font-size: 0.75em; /* (12 / 16), inherited font size is 16px */
+  float: right; /* LTR */
+}
+[dir="rtl"] .filter-help {
+  float: left;
+}
+
+/**
+ * Filter guidelines.
+ */
+.filter-guidelines__item {
+  margin-top: 0.5em; /* (6 / 12) */
+  font-size: 0.75em; /* (12 / 16) */
+  color: var(--color-description-fg);
+}
+/* Filter tips. */
+.filter-guidelines__item .tips li {
+  margin-top: 0.3333em; /* (4 / 12) */
+  margin-bottom: 0;
+}
+.filter-guidelines__item p {
+  margin-top: 0.3333em; /* (4 / 12) */
+  margin-bottom: 0;
+}
