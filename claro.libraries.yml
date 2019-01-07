@@ -6,7 +6,6 @@ global-styling:
       css/dist/base/typography.css: {}
       css/dist/base/print.css: {}
     component:
-      css/dist/components/admin-list.css: {}
       css/dist/components/content-header.css: {}
       css/dist/components/container-inline.css: {}
       css/dist/components/container-inline.module.css: {}
@@ -27,7 +26,6 @@ global-styling:
       css/dist/components/node.css: {}
       css/dist/components/page-title.css: {}
       css/dist/components/pager.css: {}
-      css/dist/components/panel.css: {}
       css/dist/components/skip-link.css: {}
       css/dist/components/tables.css: {}
       css/dist/components/search-admin-settings.css: {}
@@ -40,7 +38,6 @@ global-styling:
       css/dist/components/views-ui.css: {}
     theme:
       css/dist/theme/colors.css: {}
-      css/dist/theme/system-admin.css: {}
     layout:
       css/dist/layout/layout.css: {}
   dependencies:
@@ -145,5 +142,12 @@ image-widget:
 system.admin:
   version: VERSION
   css:
-    theme:
-      css/dist/layout/system-admin--layout.css: {}
+    component:
+      css/dist/components/system-admin--admin-list.css: { weight: -10 }
+      css/dist/components/system-admin--appearance.css: { weight: -10 }
+      css/dist/components/system-admin--links.css: { weight: -10 }
+      css/dist/components/system-admin--modules.css: { weight: -10 }
+      css/dist/components/system-admin--panel.css: { weight: -10 }
+      css/dist/components/system-admin--status-report.css: { weight: -10 }
+    layout:
+      css/dist/layout/system-admin--layout.css: { weight: -10 }

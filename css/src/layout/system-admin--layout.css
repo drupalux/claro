@@ -1,11 +1,16 @@
 /**
  * @file
- * Overrides 'Reusable layout' component of system/admin library.
+ * Replacement 'Reusable layout' component styles of system/admin library.
  */
 
 .layout-container {
   margin-right: 1em;
   margin-left: 1em;
+}
+.layout-container::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 @media screen and (min-width: 38em) {
@@ -13,11 +18,27 @@
     margin-right: 3em;
     margin-left: 3em;
   }
+  .layout-column {
+    float: left;  /* LTR */
+    box-sizing: border-box;
+  }
+  [dir="rtl"] .layout-column {
+    float: right;
+  }
   .layout-column + .layout-column {
     padding-left: 3em; /* LTR */
   }
   [dir="rtl"] .layout-column + .layout-column {
     padding-right: 3em;
     padding-left: 0;
+  }
+  .layout-column--half {
+    width: 50%;
+  }
+  .layout-column--quarter {
+    width: 25%;
+  }
+  .layout-column--three-quarter {
+    width: 75%;
   }
 }
