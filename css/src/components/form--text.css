@@ -14,7 +14,6 @@
   font-size: 1em;
   line-height: 1.5;
   color: var(--color-input-fg);
-  transition: border linear var(--speed-transition), box-shadow linear var(--speed-transition);
   min-height: 3em; /* iOS. */
 }
 

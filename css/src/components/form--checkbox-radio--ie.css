@@ -4,7 +4,6 @@
  */
 
 .form-boolean::-ms-check {
-  transition: all var(--speed-transition) ease-in-out 0s, background-image 0s linear 0s;
   border: 1px solid var(--color-input-border);
   display: inline-block;
   width: 18px;

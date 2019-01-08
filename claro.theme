@@ -274,7 +274,7 @@ function claro_preprocess_fieldset(&$variables) {
   $element = $variables['element'];
   $composite_types = ['checkboxes', 'radios'];
 
-  if (in_array($element['#type'], $composite_types) && !empty($variables['element']['#children_errors'])) {
+  if (!empty($element['#type']) && in_array($element['#type'], $composite_types) && !empty($variables['element']['#children_errors'])) {
     $variables['legend_span']['attributes']->addClass('has-error');
   }
 
