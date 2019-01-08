@@ -3,11 +3,9 @@
  * @file
  * Claro's theme implementation for the content of an administrative block.
  *
- * Uses unordered list markup in both compact and extended modes.
- *
  * Available variables:
  * - content: List of administrative menu items. Each menu item contains:
- *   - url: Path to the admin section.
+ *   - link: Link to the admin section.
  *   - title: Short name of the section.
  *   - description: Description of the administrative menu item.
  * - attributes: HTML attributes to be added to the element.
@@ -18,16 +16,19 @@
  */
 #}
 {%
-  set classes = [
-    'admin-list',
-    compact ? 'compact',
+  set item_classes = [
+    'admin-item',
   ]
 %}
 {% if content %}
-  <ul{{ attributes.addClass(classes) }}>
+  <dl{{ attributes.addClass('admin-list') }}>
     {% for item in content %}
-      <div class="divider"></div>
-      <li><a href="{{ item.url }}"><span class="label">{{ item.title }}</span><div class="description">{{ item.description }}</div></a></li>
+      <div{{ create_attribute({class: item_classes}) }}>
+        <dt class="admin-item__title">{{ item.link }}</dt>
+        {% if item.description %}
+          <dd class="admin-item__description">{{ item.description }}</dd>
+        {% endif %}
+      </div>
     {% endfor %}
-  </ul>
+  </dl>
 {% endif %}

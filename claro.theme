@@ -6,6 +6,7 @@
  */
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Link;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\media\MediaForm;
 
@@ -99,12 +100,26 @@ function claro_preprocess_block(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for block admin page templates.
+ * Implements template_preprocess_HOOK() for admin_block.
+ */
+function claro_preprocess_admin_block(&$variables) {
+  if (!empty($variables['block']['content'])) {
+    $variables['block']['content']['#attributes']['class'][] = 'admin-list--panel';
+  }
+}
+
+/**
+ * Implements template_preprocess_HOOK() for admin_block.
  */
 function claro_preprocess_admin_block_content(&$variables) {
-  if (!empty($variables['content'])) {
-    foreach ($variables['content'] as $key => $item) {
-      $variables['content'][$key]['url'] = $item['url']->toString();
+  foreach ($variables['content'] as $id => &$item) {
+    $link_attributes = $item['url']->getOption('attributes') ?: [];
+    $link_attributes['class'][] = 'admin-item__link';
+    $item['url']->setOption('attributes', $link_attributes);
+    $item['link'] = Link::fromTextAndUrl($item['title'], $item['url']);
+
+    if (empty($item['description']) || empty($item['description']['#markup'])) {
+      unset($item['description']);
     }
   }
 }
@@ -128,6 +143,15 @@ function claro_element_info_alter(&$type) {
   // We require Modernizr for button styling.
   if (isset($type['button'])) {
     $type['button']['#attached']['library'][] = 'core/modernizr';
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function claro_theme_registry_alter(&$theme_registry) {
+  if (!empty($theme_registry['admin_block_content'])) {
+    $theme_registry['admin_block_content']['variables']['attributes'] = [];
   }
 }
 

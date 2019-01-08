@@ -1,0 +1,158 @@
+/**
+ * @file
+ * System admin module: Appearance.
+ */
+
+/**
+ * Appearance page.
+ */
+.theme-info__header {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+.theme-default .theme-info__header {
+  font-weight: bold;
+}
+.theme-info__description {
+  margin-top: 0;
+}
+.system-themes-list {
+  margin-bottom: 20px;
+}
+.system-themes-list-uninstalled {
+  padding-top: 20px;
+}
+.system-themes-list__header {
+  margin: 0;
+}
+
+.theme-selector {
+  padding-top: 20px;
+}
+.theme-selector .screenshot,
+.theme-selector .no-screenshot {
+  border: 1px solid #e0e0d8;
+  padding: 2px;
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+}
+.theme-default .screenshot {
+  border: 1px solid #aaa;
+}
+.system-themes-list-uninstalled .screenshot,
+.system-themes-list-uninstalled .no-screenshot {
+  max-width: 194px;
+  height: auto;
+}
+
+/**
+ * Theme display without vertical toolbar.
+ */
+@media screen and (min-width: 45em) {
+  body:not(.toolbar-vertical) .system-themes-list-installed .screenshot,
+  body:not(.toolbar-vertical) .system-themes-list-installed .no-screenshot {
+    float: left; /* LTR */
+    margin: 0 20px 0 0; /* LTR */
+    width: 294px;
+  }
+  [dir="rtl"] body:not(.toolbar-vertical) .system-themes-list-installed .screenshot,
+  [dir="rtl"] body:not(.toolbar-vertical) .system-themes-list-installed .no-screenshot {
+    float: right;
+    margin: 0 0 0 20px;
+  }
+  body:not(.toolbar-vertical) .system-themes-list-installed .system-themes-list__header {
+    margin-top: 0;
+  }
+  body:not(.toolbar-vertical) .system-themes-list-uninstalled .theme-selector {
+    box-sizing: border-box;
+    width: 31.25%;
+    float: left; /* LTR */
+    padding: 20px 20px 20px 0; /* LTR */
+  }
+  [dir="rtl"] body:not(.toolbar-vertical) .system-themes-list-uninstalled .theme-selector {
+    float: right;
+    padding: 20px 0 20px 20px;
+  }
+  body:not(.toolbar-vertical) .system-themes-list-uninstalled .theme-info {
+    min-height: 170px;
+  }
+}
+
+/**
+ * Theme display with vertical toolbar.
+ */
+@media screen and (min-width: 60em) {
+  .toolbar-vertical .system-themes-list-installed .screenshot,
+  .toolbar-vertical .system-themes-list-installed .no-screenshot {
+    float: left; /* LTR */
+    margin: 0 20px 0 0; /* LTR */
+    width: 294px;
+  }
+  [dir="rtl"] .toolbar-vertical .system-themes-list-installed .screenshot,
+  [dir="rtl"] .toolbar-vertical .system-themes-list-installed .no-screenshot {
+    float: right;
+    margin: 0 0 0 20px;
+  }
+  .toolbar-vertical .system-themes-list-installed .theme-info__header {
+    margin-top: 0;
+  }
+  .toolbar-vertical .system-themes-list-uninstalled .theme-selector {
+    box-sizing: border-box;
+    width: 31.25%;
+    float: left; /* LTR */
+    padding: 20px 20px 20px 0; /* LTR */
+  }
+  [dir="rtl"] .toolbar-vertical .system-themes-list-uninstalled .theme-selector {
+    float: right;
+    padding: 20px 0 20px 20px;
+  }
+  .toolbar-vertical .system-themes-list-uninstalled .theme-info {
+    min-height: 170px;
+  }
+}
+.system-themes-list-installed .theme-info {
+  max-width: 940px;
+}
+
+.theme-selector .incompatible {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.theme-selector .operations {
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+.theme-selector .operations li {
+  float: left; /* LTR */
+  margin: 0;
+  padding: 0 0.7em;
+  list-style-type: none;
+  border-right: 1px solid #cdcdcd;  /* LTR */
+}
+[dir="rtl"] .theme-selector .operations li {
+  float: right;
+  border-left: 1px solid #cdcdcd;
+  border-right: none;
+}
+.theme-selector .operations li:last-child {
+  padding: 0 0 0 0.7em; /* LTR */
+  border-right: none; /* LTR */
+}
+[dir="rtl"] .theme-selector .operations li:last-child {
+  padding: 0 0.7em 0 0;
+  border-left: none;
+}
+.theme-selector .operations li:first-child {
+  padding: 0 0.7em 0 0; /* LTR */
+}
+[dir="rtl"] .theme-selector .operations li:first-child {
+  padding: 0 0 0 0.7em;
+}
+.system-themes-admin-form {
+  clear: left; /* LTR */
+}
+[dir="rtl"] .system-themes-admin-form {
+  clear: right;
+}

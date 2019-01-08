@@ -28,6 +28,11 @@ libraries-override:
         /core/themes/stable/css/system/components/system-status-counter.css: css/dist/components/system-status-counter.css
         /core/themes/stable/css/system/components/system-status-report-counters.css: css/dist/components/system-status-report-counters.css
         /core/themes/stable/css/system/components/system-status-report-general-info.css: css/dist/components/system-status-report-general-info.css
+  system/admin:
+    css:
+      theme:
+        /core/themes/stable/css/system/system.admin.css: false
+
   core/drupal.vertical-tabs:
     css:
       component:
@@ -59,6 +64,8 @@ libraries-extend:
     - claro/tour-styling
   classy/image-widget:
     - claro/image-widget
+  system/admin:
+    - claro/system.admin
 
 quickedit_stylesheets:
   - css/dist/components/quickedit.css
