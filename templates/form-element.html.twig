@@ -14,6 +14,7 @@
     'form-item',
     'js-form-type-' ~ type|clean_class,
     'form-type--' ~ type|clean_class,
+    type in ['checkbox', 'radio'] ? 'form-type--boolean',
     'js-form-item-' ~ name|clean_class,
     'form-item--' ~ name|clean_class,
     title_display not in ['after', 'before'] ? 'form-item--no-label',

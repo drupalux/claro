@@ -226,6 +226,14 @@ function claro_preprocess_form_element(&$variables) {
  * Implements template_preprocess_HOOK() for input.
  */
 function claro_preprocess_input(&$variables) {
+  if (
+    !empty($variables['element']['#title_display']) &&
+    $variables['element']['#title_display'] === 'attribute' &&
+    !empty((string) $variables['element']['#title'])
+  ) {
+    $variables['attributes']['title'] = (string) $variables['element']['#title'];
+  }
+
   $type_api = $variables['element']['#type'];
   $type_html = $variables['attributes']['type'];
   $text_types_html = [
@@ -249,6 +257,11 @@ function claro_preprocess_input(&$variables) {
     $variables['attributes']['class'][] = 'form-element';
     $variables['attributes']['class'][] = Html::getClass('form-element--type-' . $type_html);
     $variables['attributes']['class'][] = Html::getClass('form-element--api-' . $type_api);
+  }
+
+  if (in_array($type_html, ['checkbox', 'radio'])) {
+    $variables['attributes']['class'][] = 'form-boolean';
+    $variables['attributes']['class'][] = Html::getClass('form-boolean--type-' . $type_html);
   }
 }
 
@@ -282,11 +295,32 @@ function claro_preprocess_datetime_wrapper(&$variables) {
  * Implements template_preprocess_HOOK() for fieldset.
  */
 function claro_preprocess_fieldset(&$variables) {
-  if (!empty($variables['element']['#disabled'])) {
+  $element = $variables['element'];
+  $composite_types = ['checkboxes', 'radios'];
+
+  if (!empty($element['#type']) && in_array($element['#type'], $composite_types) && !empty($variables['element']['#children_errors'])) {
+    $variables['legend_span']['attributes']->addClass('has-error');
+  }
+
+  if (!empty($element['#disabled'])) {
     $variables['legend_span']['attributes']->addClass('is-disabled');
 
     if (!empty($variables['description']) && !empty($variables['description']['attributes'])) {
       $variables['description']['attributes']->addClass('is-disabled');
     }
   }
+}
+
+/**
+ * Implements template_preprocess_HOOK() for checkboxes.
+ */
+function claro_preprocess_checkboxes(&$variables) {
+  $variables['attributes']['class'][] = 'form-boolean-group';
+}
+
+/**
+ * Implements template_preprocess_HOOK() for radios.
+ */
+function claro_preprocess_radios(&$variables) {
+  $variables['attributes']['class'][] = 'form-boolean-group';
 }

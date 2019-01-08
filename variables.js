@@ -47,12 +47,13 @@ module.exports = {
     '--color-input-border': 'var(--color-grayblue)',
     '--color-input-border-hover': 'var(--color-text)',
     '--color-input-border-focus': 'var(--color-absolutezero)',
+    '--color-input-focus-shadow': 'rgba(0, 74, 220, 0.3)', // Absolute zero with opacity.
     '--color-input-error': 'var(--color-maximumred)',
     '--color-input-border-error': 'var(--color-maximumred)',
     '--color-input-label-disabled': 'rgba(84, 85, 96, 0.6)', // Davy's grey with opacity.
     '--color-input-fg-disabled': 'var(--color-oldsilver)',
-    '--color-input-bg-disabled': 'rgba(212, 212, 216, 0.3)', // Light gray with opacity.
-    '--color-input-border-disabled': 'rgba(130, 130, 140, 0.5)', // Old silver with opacity.
+    '--color-input-bg-disabled': 'rgba(212, 212, 216, 0.3)', // Light gray with 0.3 opacity .
+    '--color-input-border-disabled': '#bababf', // Old silver with 0.5 opacity on white bg.
     '--opacity-input-border-disabled': '0.5',
     '--size-input-border-radius': '0.125em', // (1/8)em ~ 2px
     '--size-input-border': '0.0625em', // (1/16)em ~ 1px

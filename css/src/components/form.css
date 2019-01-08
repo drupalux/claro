@@ -15,23 +15,6 @@
   margin-bottom: 1.5em;
 }
 /**
- * When form items are nested in radios or checkboxes group, reduce the default
- * space between them.
- */
-.form-radios .form-item,
-.form-checkboxes .form-item {
-  margin-top: 0.4em;
-  margin-bottom: 0.4em;
-}
-.form-radios .form-item:first-child,
-.form-checkboxes .form-item:first-child {
-  margin-top: 0;
-}
-.form-radios .form-item:last-child,
-.form-checkboxes .form-item:last-child {
-  margin-bottom: 0;
-}
-/**
  * When a table row has a single form item, prevent it from adding unnecessary
  * extra spacing. If it has multiple form items, allow spacing between them,
  * overriding Classy.
@@ -68,6 +51,9 @@ td > .form-item:only-child {
 .form-item__label.has-error {
   color: var(--color-input-error);
 }
+.form-item__label.option.has-error {
+  color: inherit;
+}
 .form-item__label.is-disabled {
   color: var(--color-input-fg-disabled);
   cursor: default; /* @todo ...or auto? */
@@ -88,7 +74,7 @@ td > .form-item:only-child {
 }
 
 /**
- * Description.
+ * Form item description.
  */
 .form-item__description {
   font-size: calc(12em / 16); /* 12px */
@@ -152,11 +138,17 @@ td > .form-item:only-child {
   top: 10px;
 }
 .fieldset__legend--composite {
-  font-weight: normal;
+  margin-top: calc(4em / 14); /* 4px */
+  margin-bottom: calc(4em / 14); /* 4px */
+  font-size: calc(14em / 16); /* 14px */
+  line-height: calc(18 / 14); /* 18px */
   text-transform: none;
 }
 .fieldset__label.is-disabled {
   color: var(--color-input-fg-disabled);
+}
+.fieldset__label.has-error {
+  color: var(--color-input-error);
 }
 .fieldset__description {
   font-size: calc(12em / 16); /* 12px */
@@ -219,8 +211,7 @@ ul.tips li {
  * @legacy
  */
 @media screen and (max-width: 600px) {
-  .form-actions input,
-  .form-wrapper input {
+  .form-actions input {
     float: none;
     margin-left: 0;
     margin-right: 0;
@@ -228,9 +219,7 @@ ul.tips li {
     width: 100%;
   }
   .form-actions input:first-child,
-  .form-wrapper input:first-child,
-  .form-actions label + input,
-  .form-wrapper label + input {
+  .form-actions label + input {
     margin-top: 0;
   }
   details summary {
@@ -245,4 +234,18 @@ ul.tips li {
   div.form-item div.password-suggestions {
     float: none;
   }
+  #dblog-filter-form .form-actions {
+    float: none;
+    padding: 0;
+  }
+  #edit-cancel {
+    display: block;
+    margin: 10px 0 0 0;
+  }
+}
+
+/* Exceptions */
+#diff-inline-form select,
+div.filter-options select {
+  padding: 0;
 }

@@ -14,7 +14,6 @@
   font-size: 1em;
   line-height: 1.5;
   color: var(--color-input-fg);
-  transition: border linear var(--speed-transition), box-shadow linear var(--speed-transition);
   min-height: 3em; /* iOS. */
 }
 
@@ -86,5 +85,13 @@
   /* Number, date and time are skipped here */
   .form-element {
     width: 100%;
+    float: none;
+    margin-top: 0.75em;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .form-element:first-child,
+  .form-item__label + .form-element {
+    margin-top: 0;
   }
 }
